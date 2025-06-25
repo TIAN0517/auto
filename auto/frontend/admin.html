@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理後台 - Jy自動贊助系統</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="description" content="系統管理控制台 - 4D科技風格儀表板">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 載入畫面 -->
+    <div id="loading-screen">
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">管理系統初始化中...</div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+        <div class="loading-particles"></div>
+    </div>
+
+    <!-- 導航欄 -->
+    <header class="navbar admin-navbar">
+        <nav class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Admin Panel</span>
+                <span class="logo-version">v3.0</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">返回首頁</a></li>
+                <li><a href="admin.html" class="nav-link active">儀表板</a></li>
+                <li><a href="#transactions" class="nav-link">交易管理</a></li>
+                <li><a href="#users" class="nav-link">用戶管理</a></li>
+                <li><a href="#settings" class="nav-link">系統設置</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="admin-status">
+                    <span class="status-indicator online"></span>
+                    <span class="status-text">系統正常</span>
+                </div>
+                <div class="admin-user">
+                    <span class="admin-name">管理員</span>
+                    <button class="logout-btn" id="logoutBtn">登出</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 側邊欄 -->
+    <aside class="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <h3 class="section-title">系統監控</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="#dashboard" class="menu-item active">
+                        <span class="menu-icon">📊</span>
+                        <span class="menu-text">總覽儀表板</span>
+                    </a></li>
+                    <li><a href="#realtime" class="menu-item">
+                        <span class="menu-icon">📈</span>
+                        <span class="menu-text">即時監控</span>
+                    </a></li>
+                    <li><a href="#analytics" class="menu-item">
+                        <span class="menu-icon">📋</span>
+                        <span class="menu-text">數據分析</span>
+                    </a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="section-title">交易管理</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="#transactions" class="menu-item">
+                        <span class="menu-icon">💳</span>
+                        <span class="menu-text">交易記錄</span>
+                    </a></li>
+                    <li><a href="#payments" class="menu-item">
+                        <span class="menu-icon">💰</span>
+                        <span class="menu-text">支付管理</span>
+                    </a></li>
+                    <li><a href="#refunds" class="menu-item">
+                        <span class="menu-icon">↩️</span>
+                        <span class="menu-text">退款處理</span>
+                    </a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="section-title">用戶管理</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="#users" class="menu-item">
+                        <span class="menu-icon">👥</span>
+                        <span class="menu-text">用戶列表</span>
+                    </a></li>
+                    <li><a href="#vip" class="menu-item">
+                        <span class="menu-icon">👑</span>
+                        <span class="menu-text">VIP管理</span>
+                    </a></li>
+                    <li><a href="#support" class="menu-item">
+                        <span class="menu-icon">🎧</span>
+                        <span class="menu-text">客服支援</span>
+                    </a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="section-title">系統設置</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="#settings" class="menu-item">
+                        <span class="menu-icon">⚙️</span>
+                        <span class="menu-text">基本設置</span>
+                    </a></li>
+                    <li><a href="#payment-config" class="menu-item">
+                        <span class="menu-icon">🔧</span>
+                        <span class="menu-text">支付配置</span>
+                    </a></li>
+                    <li><a href="#security" class="menu-item">
+                        <span class="menu-icon">🔒</span>
+                        <span class="menu-text">安全設置</span>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 主要內容 -->
+    <main class="admin-main">
+        <!-- 儀表板總覽 -->
+        <section id="dashboard" class="admin-section active">
+            <div class="section-header">
+                <h1 class="section-title">系統儀表板</h1>
+                <div class="section-actions">
+                    <button class="refresh-btn" id="refreshDashboard">
+                        <span class="btn-icon">🔄</span>
+                        <span class="btn-text">刷新</span>
+                    </button>
+                    <button class="export-btn" id="exportData">
+                        <span class="btn-icon">📊</span>
+                        <span class="btn-text">導出報表</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 統計卡片 -->
+            <div class="stats-grid">
+                <div class="stat-card revenue-card">
+                    <div class="stat-header">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-trend up">+12.5%</div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-title">今日收入</h3>
+                        <div class="stat-value" id="todayRevenue">NT$ 45,680</div>
+                        <p class="stat-desc">較昨日增長 12.5%</p>
+                    </div>
+                </div>
+
+                <div class="stat-card transactions-card">
+                    <div class="stat-header">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-trend up">+8.3%</div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-title">今日交易</h3>
+                        <div class="stat-value" id="todayTransactions">156</div>
+                        <p class="stat-desc">成功率 99.2%</p>
+                    </div>
+                </div>
+
+                <div class="stat-card users-card">
+                    <div class="stat-header">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-trend up">+5.7%</div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-title">活躍用戶</h3>
+                        <div class="stat-value" id="activeUsers">1,234</div>
+                        <p class="stat-desc">在線用戶 89</p>
+                    </div>
+                </div>
+
+                <div class="stat-card system-card">
+                    <div class="stat-header">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-trend stable">99.9%</div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-title">系統狀態</h3>
+                        <div class="stat-value" id="systemStatus">正常</div>
+                        <p class="stat-desc">運行時間 99.9%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 圖表區域 -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">收入趨勢</h3>
+                        <div class="chart-controls">
+                            <select class="chart-period" id="revenuePeriod">
+                                <option value="7d">近7天</option>
+                                <option value="30d">近30天</option>
+                                <option value="90d">近90天</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="chart-content">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">支付方式分布</h3>
+                    </div>
+                    <div class="chart-content">
+                        <canvas id="paymentMethodChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 最近交易 -->
+            <div class="recent-transactions">
+                <div class="transactions-header">
+                    <h3 class="transactions-title">最近交易</h3>
+                    <a href="#transactions" class="view-all-link">查看全部</a>
+                </div>
+                <div class="transactions-table">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>交易ID</th>
+                                <th>用戶</th>
+                                <th>套餐</th>
+                                <th>金額</th>
+                                <th>支付方式</th>
+                                <th>狀態</th>
+                                <th>時間</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentTransactionsBody">
+                            <!-- 動態載入交易數據 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 交易管理 -->
+        <section id="transactions" class="admin-section">
+            <div class="section-header">
+                <h1 class="section-title">交易管理</h1>
+                <div class="section-filters">
+                    <input type="text" class="search-input" placeholder="搜索交易ID或用戶..." id="transactionSearch">
+                    <select class="filter-select" id="statusFilter">
+                        <option value="all">全部狀態</option>
+                        <option value="success">成功</option>
+                        <option value="pending">處理中</option>
+                        <option value="failed">失敗</option>
+                    </select>
+                    <select class="filter-select" id="methodFilter">
+                        <option value="all">全部支付方式</option>
+                        <option value="speedpay">速買配</option>
+                        <option value="ecpay">綠界科技</option>
+                        <option value="newebpay">藍新金流</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="transactions-content">
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>交易ID</th>
+                                <th>用戶帳號</th>
+                                <th>套餐名稱</th>
+                                <th>金額</th>
+                                <th>支付方式</th>
+                                <th>狀態</th>
+                                <th>創建時間</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionsTableBody">
+                            <!-- 動態載入交易數據 -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <button class="pagination-btn" id="prevPage">上一頁</button>
+                    <span class="pagination-info" id="pageInfo">第 1 頁，共 10 頁</span>
+                    <button class="pagination-btn" id="nextPage">下一頁</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 支付配置 -->
+        <section id="payment-config" class="admin-section">
+            <div class="section-header">
+                <h1 class="section-title">支付配置</h1>
+            </div>
+
+            <div class="config-grid">
+                <!-- 速買配配置 -->
+                <div class="config-card speedpay-config">
+                    <div class="config-header">
+                        <div class="config-icon">🚀</div>
+                        <h3 class="config-title">速買配 SpeedPay</h3>
+                        <div class="config-status enabled">已啟用</div>
+                    </div>
+                    <div class="config-content">
+                        <div class="form-group">
+                            <label class="form-label">商店代號</label>
+                            <input type="text" class="form-input" id="speedpayMerchantId" placeholder="輸入商店代號">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">API Key</label>
+                            <input type="password" class="form-input" id="speedpayApiKey" placeholder="輸入API Key">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">回調網址</label>
+                            <input type="url" class="form-input" id="speedpayCallback" placeholder="https://your-domain.com/callback">
+                        </div>
+                        <div class="config-actions">
+                            <button class="btn-secondary" id="testSpeedpay">測試連接</button>
+                            <button class="btn-primary" id="saveSpeedpay">保存設置</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 綠界科技配置 -->
+                <div class="config-card ecpay-config">
+                    <div class="config-header">
+                        <div class="config-icon">🟢</div>
+                        <h3 class="config-title">綠界科技 ECPay</h3>
+                        <div class="config-status disabled">備用</div>
+                    </div>
+                    <div class="config-content">
+                        <div class="form-group">
+                            <label class="form-label">商店代號</label>
+                            <input type="text" class="form-input" id="ecpayMerchantId" placeholder="輸入商店代號">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">HashKey</label>
+                            <input type="password" class="form-input" id="ecpayHashKey" placeholder="輸入HashKey">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">HashIV</label>
+                            <input type="password" class="form-input" id="ecpayHashIV" placeholder="輸入HashIV">
+                        </div>
+                        <div class="config-actions">
+                            <button class="btn-secondary" id="testEcpay">測試連接</button>
+                            <button class="btn-primary" id="saveEcpay">保存設置</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 藍新金流配置 -->
+                <div class="config-card newebpay-config">
+                    <div class="config-header">
+                        <div class="config-icon">🔵</div>
+                        <h3 class="config-title">藍新金流 NewebPay</h3>
+                        <div class="config-status disabled">備用</div>
+                    </div>
+                    <div class="config-content">
+                        <div class="form-group">
+                            <label class="form-label">商店代號</label>
+                            <input type="text" class="form-input" id="newebpayMerchantId" placeholder="輸入商店代號">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">HashKey</label>
+                            <input type="password" class="form-input" id="newebpayHashKey" placeholder="輸入HashKey">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">HashIV</label>
+                            <input type="password" class="form-input" id="newebpayHashIV" placeholder="輸入HashIV">
+                        </div>
+                        <div class="config-actions">
+                            <button class="btn-secondary" id="testNewebpay">測試連接</button>
+                            <button class="btn-primary" id="saveNewebpay">保存設置</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 交易詳情模態框 -->
+    <div id="transactionModal" class="modal">
+        <div class="modal-content transaction-modal">
+            <div class="modal-header">
+                <h3 class="modal-title">交易詳情</h3>
+                <button class="modal-close" id="closeTransactionModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="transaction-details" id="transactionDetails">
+                    <!-- 動態載入交易詳情 -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="closeModal">關閉</button>
+                <button class="btn-primary" id="processRefund">處理退款</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 背景效果 -->
+    <div class="background-effects">
+        <div class="particle-field"></div>
+        <div class="grid-overlay"></div>
+        <div class="energy-waves"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/websocket.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

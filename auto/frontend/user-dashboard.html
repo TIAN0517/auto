@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用戶中心 - Jy自動贊助系統</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="description" content="個人用戶中心 - 4D科技風格界面">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    .profile-card, .balance-card, .quick-action-card, .transactions-list, .transaction-item {
+      background: rgba(20, 20, 40, 0.55);
+      box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.15), 0 1.5px 8px 0 rgba(124, 58, 237, 0.08);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-radius: 20px;
+      border: none;
+    }
+    .profile-card, .balance-card {
+      border: none;
+    }
+    .profile-name, .section-title, .gradient-text {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      filter: drop-shadow(0 0 8px var(--primary-color));
+    }
+    .btn-primary, .btn-secondary {
+      box-shadow: 0 0 16px 4px var(--primary-color), 0 0 32px 8px var(--accent-color);
+      background: var(--gradient-primary);
+      color: #fff;
+      border: none;
+      border-radius: 9999px;
+      transition: box-shadow 0.3s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary:hover, .btn-secondary:hover {
+      box-shadow: 0 0 32px 8px var(--primary-color), 0 0 64px 16px var(--accent-color);
+      transform: scale(1.05);
+    }
+    </style>
+</head>
+<body>
+    <!-- 載入畫面 -->
+    <div id="loading-screen">
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">用戶中心載入中...</div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+        <div class="loading-particles"></div>
+    </div>
+
+    <!-- 導航欄 -->
+    <header class="navbar">
+        <nav class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Jy自動贊助</span>
+                <span class="logo-version">v3.0</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">首頁</a></li>
+                <li><a href="sponsor.html" class="nav-link">贊助</a></li>
+                <li><a href="user-dashboard.html" class="nav-link active">用戶中心</a></li>
+                <li><a href="#support" class="nav-link">客服支援</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="theme-toggle" id="themeToggle">
+                    <span class="theme-icon">🌙</span>
+                </div>
+                <div class="notification-bell" id="notificationBell">
+                    <span class="bell-icon">🔔</span>
+                    <span class="notification-count">3</span>
+                </div>
+                <div class="user-menu">
+                    <div class="user-avatar" id="userAvatar">
+                        <span class="avatar-text">JY</span>
+                    </div>
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="user-dashboard.html" class="dropdown-item active">用戶中心</a>
+                        <a href="#settings" class="dropdown-item">設置</a>
+                        <a href="#logout" class="dropdown-item">登出</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主要內容 -->
+    <main class="dashboard-main">
+        <!-- 用戶資訊卡片 -->
+        <section class="user-profile-section">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <div class="avatar-container">
+                            <span class="avatar-text">JY</span>
+                            <div class="avatar-status online"></div>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <h2 class="profile-name" id="userName">Jy用戶</h2>
+                        <p class="profile-email" id="userEmail">user@example.com</p>
+                        <div class="profile-badges">
+                            <span class="badge vip">VIP會員</span>
+                            <span class="badge verified">已驗證</span>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn-secondary" id="editProfile">編輯資料</button>
+                        <button class="btn-primary" id="upgradeVip">升級VIP</button>
+                    </div>
+                </div>
+                
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalSpent">NT$ 12,580</div>
+                        <div class="stat-label">總消費金額</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalOrders">28</div>
+                        <div class="stat-label">總訂單數</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="memberSince">365</div>
+                        <div class="stat-label">會員天數</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="loyaltyPoints">2,580</div>
+                        <div class="stat-label">忠誠積分</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 快速操作 -->
+        <section class="quick-actions-section">
+            <h3 class="section-title">快速操作</h3>
+            <div class="quick-actions-grid">
+                <a href="sponsor.html" class="quick-action-card">
+                    <div class="action-icon">💎</div>
+                    <div class="action-content">
+                        <h4 class="action-title">立即贊助</h4>
+                        <p class="action-desc">選擇贊助套餐</p>
+                    </div>
+                    <div class="action-arrow">→</div>
+                </a>
+                
+                <a href="#recharge" class="quick-action-card">
+                    <div class="action-icon">💰</div>
+                    <div class="action-content">
+                        <h4 class="action-title">餘額充值</h4>
+                        <p class="action-desc">增加帳戶餘額</p>
+                    </div>
+                    <div class="action-arrow">→</div>
+                </a>
+                
+                <a href="#history" class="quick-action-card">
+                    <div class="action-icon">📋</div>
+                    <div class="action-content">
+                        <h4 class="action-title">交易記錄</h4>
+                        <p class="action-desc">查看歷史訂單</p>
+                    </div>
+                    <div class="action-arrow">→</div>
+                </a>
+                
+                <a href="#support" class="quick-action-card">
+                    <div class="action-icon">🎧</div>
+                    <div class="action-content">
+                        <h4 class="action-title">客服支援</h4>
+                        <p class="action-desc">聯繫客服團隊</p>
+                    </div>
+                    <div class="action-arrow">→</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 帳戶餘額 -->
+        <section class="balance-section">
+            <div class="balance-card">
+                <div class="balance-header">
+                    <h3 class="balance-title">帳戶餘額</h3>
+                    <div class="balance-actions">
+                        <button class="btn-outline" id="withdrawBtn">提現</button>
+                        <button class="btn-primary" id="rechargeBtn">充值</button>
+                    </div>
+                </div>
+                <div class="balance-content">
+                    <div class="balance-amount">
+                        <span class="currency">NT$</span>
+                        <span class="amount" id="accountBalance">1,250</span>
+                    </div>
+                    <div class="balance-trend">
+                        <span class="trend-icon up">↗</span>
+                        <span class="trend-text">本月增長 +15.2%</span>
+                    </div>
+                </div>
+                <div class="balance-chart">
+                    <canvas id="balanceChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最近交易 -->
+        <section class="recent-transactions-section">
+            <div class="section-header">
+                <h3 class="section-title">最近交易</h3>
+                <a href="#all-transactions" class="view-all-link">查看全部</a>
+            </div>
+            <div class="transactions-list">
+                <div class="transaction-item">
+                    <div class="transaction-icon success">✓</div>
+                    <div class="transaction-info">
+                        <h4 class="transaction-title">VIP套餐購買</h4>
+                        <p class="transaction-desc">2024-01-15 14:30</p>
+                    </div>
+                    <div class="transaction-amount success">-NT$ 999</div>
+                    <div class="transaction-status success">成功</div>
+                </div>
+                
+                <div class="transaction-item">
+                    <div class="transaction-icon success">✓</div>
+                    <div class="transaction-info">
+                        <h4 class="transaction-title">帳戶充值</h4>
+                        <p class="transaction-desc">2024-01-14 09:15</p>
+                    </div>
+                    <div class="transaction-amount success">+NT$ 2,000</div>
+                    <div class="transaction-status success">成功</div>
+                </div>
+                
+                <div class="transaction-item">
+                    <div class="transaction-icon pending">⏳</div>
+                    <div class="transaction-info">
+                        <h4 class="transaction-title">進階套餐購買</h4>
+                        <p class="transaction-desc">2024-01-13 16:45</p>
+                    </div>
+                    <div class="transaction-amount pending">-NT$ 499</div>
+                    <div class="transaction-status pending">處理中</div>
+                </div>
+                
+                <div class="transaction-item">
+                    <div class="transaction-icon success">✓</div>
+                    <div class="transaction-info">
+                        <h4 class="transaction-title">基礎套餐購買</h4>
+                        <p class="transaction-desc">2024-01-12 11:20</p>
+                    </div>
+                    <div class="transaction-amount success">-NT$ 199</div>
+                    <div class="transaction-status success">成功</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIP特權 -->
+        <section class="vip-privileges-section">
+            <div class="vip-card">
+                <div class="vip-header">
+                    <div class="vip-icon">👑</div>
+                    <div class="vip-info">
+                        <h3 class="vip-title">VIP會員特權</h3>
+                        <p class="vip-desc">享受專屬優惠與服務</p>
+                    </div>
+                    <div class="vip-level">
+                        <span class="level-badge">VIP 3</span>
+                    </div>
+                </div>
+                
+                <div class="vip-progress">
+                    <div class="progress-info">
+                        <span class="progress-label">升級進度</span>
+                        <span class="progress-value">2,580 / 5,000 積分</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 51.6%"></div>
+                    </div>
+                </div>
+                
+                <div class="vip-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🎁</span>
+                        <span class="benefit-text">專屬禮品</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">⚡</span>
+                        <span class="benefit-text">優先處理</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">💰</span>
+                        <span class="benefit-text">額外折扣</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🎧</span>
+                        <span class="benefit-text">專屬客服</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 安全設置 -->
+        <section class="security-section">
+            <h3 class="section-title">安全設置</h3>
+            <div class="security-grid">
+                <div class="security-item">
+                    <div class="security-icon">🔒</div>
+                    <div class="security-info">
+                        <h4 class="security-title">密碼安全</h4>
+                        <p class="security-desc">上次更新：30天前</p>
+                    </div>
+                    <button class="btn-outline" id="changePassword">修改密碼</button>
+                </div>
+                
+                <div class="security-item">
+                    <div class="security-icon">📱</div>
+                    <div class="security-info">
+                        <h4 class="security-title">雙重驗證</h4>
+                        <p class="security-desc">已啟用</p>
+                    </div>
+                    <button class="btn-outline" id="manage2FA">管理</button>
+                </div>
+                
+                <div class="security-item">
+                    <div class="security-icon">🔔</div>
+                    <div class="security-info">
+                        <h4 class="security-title">登入通知</h4>
+                        <p class="security-desc">已啟用</p>
+                    </div>
+                    <button class="btn-outline" id="manageNotifications">設置</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 充值模態框 -->
+    <div id="rechargeModal" class="modal">
+        <div class="modal-content recharge-modal">
+            <div class="modal-header">
+                <h3 class="modal-title">帳戶充值</h3>
+                <button class="modal-close" id="closeRechargeModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="recharge-form">
+                    <div class="amount-selection">
+                        <h4 class="form-section-title">選擇充值金額</h4>
+                        <div class="amount-grid">
+                            <button class="amount-btn" data-amount="500">NT$ 500</button>
+                            <button class="amount-btn" data-amount="1000">NT$ 1,000</button>
+                            <button class="amount-btn" data-amount="2000">NT$ 2,000</button>
+                            <button class="amount-btn" data-amount="5000">NT$ 5,000</button>
+                        </div>
+                        <div class="custom-amount">
+                            <input type="number" class="amount-input" placeholder="自定義金額" id="customAmount">
+                        </div>
+                    </div>
+                    
+                    <div class="payment-method-selection">
+                        <h4 class="form-section-title">選擇支付方式</h4>
+                        <div class="payment-methods">
+                            <label class="payment-method">
+                                <input type="radio" name="rechargeMethod" value="speedpay" checked>
+                                <div class="method-card">
+                                    <img src="assets/payment-logos/speedpay.png" alt="速買配" class="method-logo">
+                                    <span class="method-name">速買配</span>
+                                    <span class="method-badge recommended">推薦</span>
+                                </div>
+                            </label>
+                            
+                            <label class="payment-method">
+                                <input type="radio" name="rechargeMethod" value="ecpay">
+                                <div class="method-card">
+                                    <img src="assets/payment-logos/ecpay.png" alt="綠界科技" class="method-logo">
+                                    <span class="method-name">綠界科技</span>
+                                </div>
+                            </label>
+                            
+                            <label class="payment-method">
+                                <input type="radio" name="rechargeMethod" value="newebpay">
+                                <div class="method-card">
+                                    <img src="assets/payment-logos/newebpay.png" alt="藍新金流" class="method-logo">
+                                    <span class="method-name">藍新金流</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancelRecharge">取消</button>
+                <button class="btn-primary" id="confirmRecharge">確認充值</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 編輯資料模態框 -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content profile-modal">
+            <div class="modal-header">
+                <h3 class="modal-title">編輯個人資料</h3>
+                <button class="modal-close" id="closeProfileModal">×</button>
+            </div>
+            <div class="modal-body">
+                <form class="profile-form" id="profileForm">
+                    <div class="form-group">
+                        <label class="form-label">用戶名稱</label>
+                        <input type="text" class="form-input" id="editUserName" value="Jy用戶">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">電子郵件</label>
+                        <input type="email" class="form-input" id="editUserEmail" value="user@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">手機號碼</label>
+                        <input type="tel" class="form-input" id="editUserPhone" placeholder="+886 912345678">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">個人簡介</label>
+                        <textarea class="form-textarea" id="editUserBio" placeholder="介紹一下自己..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancelEdit">取消</button>
+                <button class="btn-primary" id="saveProfile">保存更改</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 背景效果 -->
+    <div class="background-effects">
+        <div class="particle-field"></div>
+        <div class="grid-overlay"></div>
+        <div class="energy-waves"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/payment.js"></script>
+    <script src="js/websocket.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

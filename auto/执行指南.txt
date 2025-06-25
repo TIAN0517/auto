@@ -1,0 +1,52 @@
+SQL数据库导入执行指南
+===================
+
+问题分析：
+从错误信息看，主要问题是：
+1. 物理文件名 'RanUser.mdf' 可能不正确
+2. 数据库已存在导致的冲突
+3. 对象名称冲突
+
+解决方案：
+
+步骤1：执行修复脚本
+--------------------
+1. 在SSMS中打开 'fix_database_creation.sql'
+2. 按F5执行此脚本
+3. 此脚本会：
+   - 删除现有的RanGameS1和RanUser数据库
+   - 重新创建这两个数据库，使用正确的文件名
+
+步骤2：执行剩余的SQL内容
+--------------------------
+执行修复脚本后，按以下顺序执行SQL文件的剩余内容：
+
+对于RanGameS1.sql：
+- 跳过开头的 CREATE DATABASE 部分
+- 从 "USE [RanGameS1]" 开始执行
+
+对于RanUser.sql：
+- 跳过开头的 CREATE DATABASE 部分  
+- 从 "USE [RanUser]" 开始执行
+
+其他文件按正常顺序执行：
+3. RanShop.sql
+4. RanMobileInterface.sql
+5. RanMiniHoldem.sql
+6. RanLogS1.sql
+7. WBGame.sql
+8. WBUser.sql
+9. WBLog.sql
+
+注意事项：
+----------
+- 确保SQL Server服务账户对数据文件目录有写权限
+- 如果仍有错误，请检查SQL Server的默认数据目录设置
+- 执行前确保没有其他连接占用这些数据库
+
+故障排除：
+----------
+如果仍然出现文件路径错误：
+1. 检查SQL Server配置管理器中的默认数据目录
+2. 确保该目录存在且有足够空间
+3. 重启SQL Server服务

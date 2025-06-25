@@ -1,0 +1,26 @@
+<svg width="200" height="50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Visa -->
+  <g id="visa">
+    <rect x="5" y="10" width="40" height="25" rx="3" fill="#1a1f71"/>
+    <text x="25" y="27" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">VISA</text>
+  </g>
+  
+  <!-- MasterCard -->
+  <g id="mastercard">
+    <rect x="55" y="10" width="40" height="25" rx="3" fill="#eb001b"/>
+    <circle cx="70" cy="22.5" r="8" fill="#ff5f00"/>
+    <circle cx="80" cy="22.5" r="8" fill="#f79e1b"/>
+  </g>
+  
+  <!-- PayPal -->
+  <g id="paypal">
+    <rect x="105" y="10" width="40" height="25" rx="3" fill="#003087"/>
+    <text x="125" y="27" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="white">PayPal</text>
+  </g>
+  
+  <!-- Bitcoin -->
+  <g id="bitcoin">
+    <circle cx="170" cy="22.5" r="15" fill="#f7931a"/>
+    <text x="170" y="27" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">₿</text>
+  </g>
+</svg>

@@ -1,0 +1,1286 @@
+/* ================================================= */
+/* 支付頁面專用樣式 - 速買配整合 */
+/* ================================================= */
+
+/* 支付容器 */
+.payment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+    min-height: calc(100vh - 80px);
+    background: rgba(20, 20, 40, 0.55);
+    box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.15), 0 1.5px 8px 0 rgba(124, 58, 237, 0.08);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 20px;
+    border: none;
+}
+
+/* 支付標題區 */
+.payment-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xxl);
+    position: relative;
+}
+
+.payment-title {
+    margin-bottom: var(--spacing-lg);
+}
+
+.title-main {
+    font-family: var(--font-accent);
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    filter: drop-shadow(0 0 8px var(--primary-color));
+}
+
+.title-icon {
+    font-size: 3.5rem;
+    filter: drop-shadow(0 0 20px var(--primary-color));
+}
+
+.title-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 安全徽章 */
+.security-badges {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-normal);
+}
+
+.ssl-badge {
+    border-color: var(--success-color);
+    color: var(--success-color);
+}
+
+.pci-badge {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.instant-badge {
+    border-color: var(--warning-color);
+    color: var(--warning-color);
+}
+
+.badge:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* 訂單摘要 */
+.order-summary {
+    margin-bottom: var(--spacing-xxl);
+}
+
+.summary-card {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: var(--spacing-xl);
+    backdrop-filter: blur(15px);
+    box-shadow: var(--shadow-primary);
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(20, 20, 40, 0.55);
+    box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.15), 0 1.5px 8px 0 rgba(124, 58, 237, 0.08);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 20px;
+    border: none;
+}
+
+.summary-title {
+    font-family: var(--font-accent);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.item-value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.order-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    margin: var(--spacing-md) 0;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.total-label {
+    color: var(--text-primary);
+}
+
+.total-amount {
+    color: var(--primary-color);
+    font-family: var(--font-accent);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    filter: drop-shadow(0 0 8px var(--primary-color));
+}
+
+/* 支付方式 */
+.payment-methods {
+    margin-bottom: var(--spacing-xxl);
+}
+
+.methods-title {
+    font-family: var(--font-accent);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--primary-color);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    filter: drop-shadow(0 0 8px var(--primary-color));
+}
+
+.payment-method {
+    background: var(--bg-glass);
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+    background: rgba(20, 20, 40, 0.55);
+    box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.15), 0 1.5px 8px 0 rgba(124, 58, 237, 0.08);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 20px;
+    border: none;
+}
+
+.payment-method::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+    transition: left var(--transition-slow);
+}
+
+.payment-method:hover::before {
+    left: 100%;
+}
+
+.payment-method:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 48px 0 var(--primary-color), 0 2px 16px 0 var(--accent-color);
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.payment-method.selected {
+    border-color: var(--primary-color);
+    background: rgba(0, 212, 255, 0.1);
+    box-shadow: 0 0 32px 8px var(--primary-color), 0 0 64px 16px var(--accent-color);
+    transform: scale(1.03);
+    z-index: 2;
+}
+
+.payment-method.recommended {
+    border-color: var(--success-color);
+    position: relative;
+}
+
+.payment-method.recommended::after {
+    content: '推薦';
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--success-color);
+    color: var(--bg-primary);
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    z-index: 10;
+}
+
+.method-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.method-logo {
+    width: 80px;
+    height: 80px;
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+}
+
+.logo-img {
+    max-width: 60px;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+.method-info {
+    flex: 1;
+}
+
+.method-name {
+    font-family: var(--font-accent);
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+}
+
+.method-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.method-badges {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.recommended-badge {
+    background: var(--success-color);
+    color: var(--bg-primary);
+}
+
+.backup-badge {
+    background: var(--text-muted);
+    color: var(--text-primary);
+}
+
+.method-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.payment-option:hover {
+    border-color: var(--primary-color);
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.payment-option.selected {
+    border-color: var(--primary-color);
+    background: rgba(0, 212, 255, 0.2);
+}
+
+.option-icon {
+    font-size: 1.5rem;
+}
+
+.option-text {
+    font-weight: 500;
+}
+
+/* 支付表單 */
+.payment-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.payment-form-content {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: var(--spacing-xl);
+    backdrop-filter: blur(15px);
+    box-shadow: var(--shadow-primary);
+    background: rgba(20, 20, 40, 0.55);
+    box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.15), 0 1.5px 8px 0 rgba(124, 58, 237, 0.08);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 20px;
+    border: none;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-input, input, textarea {
+    width: 100%;
+    padding: 0.75em 1.2em;
+    background: rgba(30, 30, 50, 0.7);
+    border: none;
+    border-radius: 12px;
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px rgba(0,212,255,0.08);
+    outline: none;
+    transition: box-shadow 0.2s, background 0.2s;
+}
+
+.form-input:focus, input:focus, textarea:focus {
+    background: rgba(40, 40, 70, 0.9);
+    box-shadow: 0 0 0 2px var(--primary-color), 0 2px 16px rgba(124,58,237,0.12);
+}
+
+.form-input::placeholder {
+    color: var(--text-muted);
+}
+
+/* 支付按鈕 */
+.payment-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.btn-secondary,
+.btn-primary {
+    flex: 1;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: none;
+    border-radius: 9999px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 16px 4px var(--primary-color), 0 0 32px 8px var(--accent-color);
+    background: var(--gradient-primary);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 0 32px 8px var(--primary-color), 0 0 64px 16px var(--accent-color);
+    transform: scale(1.05);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 32px 8px var(--primary-color), 0 0 64px 16px var(--accent-color);
+    transform: scale(1.05);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.payment-btn {
+    position: relative;
+}
+
+.btn-amount {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--warning-color);
+    color: var(--bg-primary);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* 支付狀態 */
+.payment-status {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.status-card {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: var(--spacing-xxl);
+    text-align: center;
+    backdrop-filter: blur(15px);
+    box-shadow: var(--shadow-primary);
+}
+
+.status-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-lg);
+    display: block;
+    animation: pulse 2s infinite;
+}
+
+.status-title {
+    font-family: var(--font-accent);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+}
+
+.status-message {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.status-progress {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-secondary);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.status-progress .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 3px;
+    transition: width var(--transition-slow);
+    animation: progressGlow 2s infinite;
+}
+
+/* 模態框 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: var(--z-modal);
+    animation: fadeIn var(--transition-normal);
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: var(--spacing-xxl);
+    max-width: 500px;
+    width: 90%;
+    box-shadow: var(--shadow-primary);
+    animation: slideUp var(--transition-normal);
+    background: rgba(20, 20, 40, 0.55);
+    box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.15), 0 1.5px 8px 0 rgba(124, 58, 237, 0.08);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 20px;
+    border: none;
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.success-icon,
+.error-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    display: block;
+}
+
+.success-icon {
+    color: var(--success-color);
+}
+
+.error-icon {
+    color: var(--error-color);
+}
+
+.modal-title {
+    font-family: var(--font-accent);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.success-modal .modal-title {
+    color: var(--success-color);
+}
+
+.error-modal .modal-title {
+    color: var(--error-color);
+}
+
+.modal-body {
+    margin-bottom: var(--spacing-lg);
+}
+
+.success-message,
+.error-message {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-secondary);
+}
+
+.transaction-info {
+    background: var(--bg-glass);
+    border-radius: 10px;
+    padding: var(--spacing-md);
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-label {
+    color: var(--text-secondary);
+}
+
+.info-value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.modal-footer {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+.modal-footer .btn-primary,
+.modal-footer .btn-secondary {
+    flex: 0 0 auto;
+    min-width: 120px;
+}
+
+/* 安全指示器 */
+.security-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid var(--success-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--success-color);
+}
+
+.security-icon {
+    font-size: 1rem;
+}
+
+/* 動畫 */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes progressGlow {
+    0%, 100% { box-shadow: 0 0 5px var(--primary-color); }
+    50% { box-shadow: 0 0 20px var(--primary-color); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .payment-container {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+    
+    .title-main {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .title-icon {
+        font-size: 2.5rem;
+    }
+    
+    .security-badges {
+        gap: var(--spacing-sm);
+    }
+    
+    .badge {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .method-header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+    
+    .method-logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .logo-img {
+        max-width: 40px;
+        max-height: 40px;
+    }
+    
+    .method-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .payment-actions {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .title-main {
+        font-size: 1.5rem;
+    }
+    
+    .methods-title {
+        font-size: 1.5rem;
+    }
+    
+    .payment-method {
+        padding: var(--spacing-md);
+    }
+    
+    .summary-card,
+    .payment-form-content {
+        padding: var(--spacing-md);
+    }
+}
+
+/* === 4D科技感強化樣式 for 支付頁 === */
+
+.payment-container, .summary-card, .payment-method, .modal-content {
+  background: rgba(20, 20, 40, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.15), 0 1.5px 8px 0 rgba(124, 58, 237, 0.08);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 20px;
+  border: none;
+}
+
+.payment-method, .summary-card {
+  border: none;
+}
+
+.payment-method.selected, .payment-method.recommended {
+  box-shadow: 0 0 32px 8px var(--primary-color), 0 0 64px 16px var(--accent-color);
+  transform: scale(1.03);
+  z-index: 2;
+}
+
+.payment-method:hover {
+  box-shadow: 0 8px 48px 0 var(--primary-color), 0 2px 16px 0 var(--accent-color);
+  transform: translateY(-8px) scale(1.03);
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.gradient-text, .title-main, .methods-title, .total-amount {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  filter: drop-shadow(0 0 8px var(--primary-color));
+}
+
+.form-input, input, textarea {
+  background: rgba(30, 30, 50, 0.7);
+  border: none;
+  border-radius: 12px;
+  color: var(--text-primary);
+  box-shadow: 0 2px 8px rgba(0,212,255,0.08);
+  padding: 0.75em 1.2em;
+  outline: none;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.form-input:focus, input:focus, textarea:focus {
+  background: rgba(40, 40, 70, 0.9);
+  box-shadow: 0 0 0 2px var(--primary-color), 0 2px 16px rgba(124,58,237,0.12);
+}
+
+.btn-primary, .btn-secondary {
+  box-shadow: 0 0 16px 4px var(--primary-color), 0 0 32px 8px var(--accent-color);
+  background: var(--gradient-primary);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  transition: box-shadow 0.3s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary:hover, .btn-secondary:hover {
+  box-shadow: 0 0 32px 8px var(--primary-color), 0 0 64px 16px var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* 4D動態光暈 */
+.payment-header::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 900px;
+  max-height: 900px;
+  background: radial-gradient(circle, rgba(0,212,255,0.18) 0%, rgba(124,58,237,0.10) 60%, transparent 100%);
+  filter: blur(60px);
+  z-index: 0;
+  transform: translate(-50%, -10%) scale(1.1);
+  pointer-events: none;
+  animation: glowMove 8s ease-in-out infinite alternate;
+}
+@keyframes glowMove {
+  0% { filter: blur(60px) brightness(1.1); }
+  100% { filter: blur(80px) brightness(1.3); }
+}
+
+/* USDT支付樣式 */
+.usdt-method {
+    background: linear-gradient(135deg, rgba(0, 166, 115, 0.1) 0%, rgba(0, 166, 115, 0.05) 100%);
+    border: 2px solid rgba(0, 166, 115, 0.3);
+}
+
+.usdt-method:hover {
+    border-color: #00A673;
+    box-shadow: 0 8px 48px 0 rgba(0, 166, 115, 0.3), 0 2px 16px 0 rgba(0, 166, 115, 0.2);
+}
+
+.crypto-badge {
+    background: linear-gradient(135deg, #00A673, #00D4AA);
+    color: white;
+    font-weight: bold;
+}
+
+.global-badge {
+    background: linear-gradient(135deg, #FF6B35, #FF8E53);
+    color: white;
+    font-weight: bold;
+}
+
+.option-fee {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    margin-left: auto;
+}
+
+/* USDT支付面板 */
+.usdt-payment-panel {
+    background: var(--bg-glass);
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+    backdrop-filter: blur(15px);
+    background: rgba(20, 20, 40, 0.55);
+    box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.15), 0 1.5px 8px 0 rgba(124, 58, 237, 0.08);
+}
+
+.payment-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.payment-header h3 {
+    color: var(--primary-color);
+    font-family: var(--font-accent);
+    margin-bottom: var(--spacing-sm);
+}
+
+.network-name {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.payment-details {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.amount-info, .wallet-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.label {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-family: var(--font-accent);
+}
+
+.wallet-address {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    max-width: 60%;
+}
+
+.wallet-address code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    word-break: break-all;
+    color: var(--text-primary);
+}
+
+.copy-btn {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    padding: var(--spacing-sm);
+    color: white;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-btn:hover {
+    background: var(--accent-color);
+    transform: scale(1.05);
+}
+
+/* QR碼區域 */
+.qr-code-section {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.qr-code-section h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-accent);
+}
+
+.qr-code {
+    display: inline-block;
+    padding: var(--spacing-lg);
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.qr-fallback {
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.qr-fallback code {
+    display: block;
+    background: rgba(0, 0, 0, 0.3);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    margin-top: var(--spacing-sm);
+    word-break: break-all;
+}
+
+/* 支付步驟 */
+.payment-steps {
+    margin-bottom: var(--spacing-xl);
+}
+
+.payment-steps h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-accent);
+}
+
+.payment-steps ol {
+    list-style: none;
+    counter-reset: step-counter;
+    padding: 0;
+}
+
+.payment-steps li {
+    counter-increment: step-counter;
+    position: relative;
+    padding: var(--spacing-md) 0 var(--spacing-md) 60px;
+    margin-bottom: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.payment-steps li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* 重要提醒 */
+.important-notes {
+    margin-bottom: var(--spacing-xl);
+}
+
+.important-notes h4 {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-accent);
+}
+
+.important-notes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.important-notes li {
+    position: relative;
+    padding: var(--spacing-sm) 0 var(--spacing-sm) 30px;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+}
+
+.important-notes li::before {
+    content: '⚠️';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2rem;
+}
+
+/* 支付操作按鈕 */
+.payment-actions {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+}
+
+.payment-actions .btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: 12px;
+    font-weight: 500;
+    transition: all var(--transition-normal);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    min-width: 150px;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 245, 255, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* 狀態顯示 */
+#usdtPaymentStatus {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-info, .confirmations-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.status-label, .confirmations-label {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.status-value {
+    font-weight: bold;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.status-value.pending {
+    background: rgba(255, 193, 7, 0.2);
+    color: #FFC107;
+}
+
+.status-value.processing {
+    background: rgba(0, 123, 255, 0.2);
+    color: #007BFF;
+}
+
+.status-value.completed {
+    background: rgba(40, 167, 69, 0.2);
+    color: #28A745;
+}
+
+.status-value.failed {
+    background: rgba(220, 53, 69, 0.2);
+    color: #DC3545;
+}
+
+.status-value.expired {
+    background: rgba(108, 117, 125, 0.2);
+    color: #6C757D;
+}
+
+.confirmations-value {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.status-message {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* 消息提示 */
+.message {
+    padding: var(--spacing-md);
+    border-radius: 10px;
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: slideIn 0.3s ease-out;
+}
+
+.message.success {
+    background: rgba(40, 167, 69, 0.2);
+    border: 1px solid rgba(40, 167, 69, 0.3);
+    color: #28A745;
+}
+
+.message.error {
+    background: rgba(220, 53, 69, 0.2);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    color: #DC3545;
+}
+
+.message.info {
+    background: rgba(0, 123, 255, 0.2);
+    border: 1px solid rgba(0, 123, 255, 0.3);
+    color: #007BFF;
+}
+
+.message button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+    margin-left: var(--spacing-sm);
+}
+
+/* 加載動畫 */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    color: var(--primary-color);
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 245, 255, 0.3);
+    border-top: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .payment-actions {
+        flex-direction: column;
+    }
+    
+    .wallet-address {
+        max-width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+    
+    .amount-info, .wallet-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+    
+    .qr-code {
+        max-width: 100%;
+        padding: var(--spacing-md);
+    }
+}

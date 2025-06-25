@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4D科技贊助系統 | 未來支付體驗</title>
+    <meta name="description" content="體驗最先進的4D科技贊助系統，支援速買配、綠界、藍新等多種支付方式">
+    <meta name="keywords" content="贊助系統,4D科技,速買支付,科技風格">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/system-icons.svg#payment">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 載入畫面 -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-container">
+            <div class="loading-logo">
+                <svg class="loading-icon" viewBox="0 0 100 100">
+                    <use href="assets/icons/system-icons.svg#loading"></use>
+                </svg>
+                <div class="loading-text">4D TECH</div>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+                <div class="progress-text">正在初始化系統..</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主導航 -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg class="brand-icon" viewBox="0 0 100 100">
+                    <use href="assets/icons/system-icons.svg#payment"></use>
+                </svg>
+                <span class="brand-text">4D TECH</span>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <svg class="nav-icon" viewBox="0 0 100 100">
+                        <use href="assets/icons/system-icons.svg#home"></use>
+                    </svg>
+                    <span>首頁</span>
+                </a>
+                <a href="#features" class="nav-link" data-section="features">
+                    <svg class="nav-icon" viewBox="0 0 100 100">
+                        <use href="assets/icons/system-icons.svg#speed"></use>
+                    </svg>
+                    <span>特色</span>
+                </a>
+                <a href="#pricing" class="nav-link" data-section="pricing">
+                    <svg class="nav-icon" viewBox="0 0 100 100">
+                        <use href="assets/icons/system-icons.svg#payment"></use>
+                    </svg>
+                    <span>方案</span>
+                </a>
+                <a href="sponsor.html" class="nav-link">
+                    <svg class="nav-icon" viewBox="0 0 100 100">
+                        <use href="assets/icons/system-icons.svg#star"></use>
+                    </svg>
+                    <span>贊助</span>
+                </a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="btn-login" id="btnLogin">
+                    <svg class="btn-icon" viewBox="0 0 100 100">
+                        <use href="assets/icons/system-icons.svg#user"></use>
+                    </svg>
+                    <span>登入</span>
+                </button>
+                <button class="nav-toggle" id="navToggle">
+                    <svg class="toggle-icon" viewBox="0 0 100 100">
+                        <use href="assets/icons/system-icons.svg#menu"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要內容 -->
+    <main class="main-content">
+        <!-- 英雄區 -->
+        <section id="home" class="hero-section">
+            <div class="hero-background">
+                <div class="grid-overlay"></div>
+                <div class="particle-system" id="particleSystem"></div>
+            </div>
+            
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <svg class="badge-icon" viewBox="0 0 100 100">
+                            <use href="assets/icons/system-icons.svg#star"></use>
+                        </svg>
+                        <span>次世代支付技術</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="title-line">4D科技</span>
+                        <span class="title-line gradient-text">贊助系統</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        體驗未來支付科技，整合速買配、綠界、藍新等多重支付閘道，提供最安全、最快速的贊助體驗。
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <a href="sponsor.html" class="btn btn-primary btn-glow">
+                            <svg class="btn-icon" viewBox="0 0 100 100">
+                                <use href="assets/icons/system-icons.svg#payment"></use>
+                            </svg>
+                            <span>立即贊助</span>
+                            <div class="btn-ripple"></div>
+                        </a>
+                        
+                        <button class="btn btn-secondary" id="btnDemo">
+                            <svg class="btn-icon" viewBox="0 0 100 100">
+                                <use href="assets/icons/system-icons.svg#eye"></use>
+                            </svg>
+                            <span>觀看演示</span>
+                        </button>
+                    </div>
+                    
+                    <div class="promotion-banner"><div class="promotion-text">Jy Tech Team Development</div></div><div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="15000">0</div>
+                            <div class="stat-label">成功交易</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="99.9">0</div>
+                            <div class="stat-label">可用性</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="3">0</div>
+                            <div class="stat-label">支付方式</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="visual-container">
+                        <div class="hologram-display">
+                            <div class="hologram-content">
+                                <div class="payment-preview">
+                                    <div class="payment-card">
+                                        <div class="card-header">
+                                            <svg class="card-icon" viewBox="0 0 100 100">
+                                                <use href="assets/icons/system-icons.svg#payment"></use>
+                                            </svg>
+                                            <span>速買配支付</span>
+                                        </div>
+                                        <div class="card-amount">NT$ 1,000</div>
+                                        <div class="card-status processing">
+                                            <div class="status-dot"></div>
+                                            <span>處理中</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-video-container">
+                          <video class="preview-video" src="assets/preview.mp4" autoplay muted loop playsinline></video>
+                        </div>
+                        <div class="floating-elements">
+                            <div class="float-element" style="--delay: 0s">
+                                <svg viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#security"></use>
+                                </svg>
+                            </div>
+                            <div class="float-element" style="--delay: 1s">
+                                <svg viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#speed"></use>
+                                </svg>
+                            </div>
+                            <div class="float-element" style="--delay: 2s">
+                                <svg viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#success"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 特色功能 -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <svg class="badge-icon" viewBox="0 0 100 100">
+                            <use href="assets/icons/system-icons.svg#star"></use>
+                        </svg>
+                        <span>核心優勢</span>
+                    </div>
+                    
+                    <h2 class="section-title">
+                        <span class="title-line">領先業界</span>
+                        <span class="title-line gradient-text">支付技術</span>
+                    </h2>
+                    
+                    <p class="section-description">
+                        整合多重支付閘道，提供最安全、最快速的贊助體驗
+                    </p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card" data-feature="speed">
+                        <div class="feature-icon">
+                            <svg class="icon" viewBox="0 0 100 100">
+                                <use href="assets/icons/system-icons.svg#speed"></use>
+                            </svg>
+                            <div class="icon-glow"></div>
+                        </div>
+                        
+                        <div class="feature-content">
+                            <h3 class="feature-title">極速處理</h3>
+                            <p class="feature-description">
+                                採用先進的並行處理技術，支付確認在5秒內完成發放
+                            </p>
+                            
+                            <div class="feature-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">15s</span>
+                                    <span class="stat-label">平均處理時間</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">99.9%</span>
+                                    <span class="stat-label">成功率</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-overlay"></div>
+                    </div>
+                    
+                    <div class="feature-card" data-feature="security">
+                        <div class="feature-icon">
+                            <svg class="icon" viewBox="0 0 100 100">
+                                <use href="assets/icons/system-icons.svg#security"></use>
+                            </svg>
+                            <div class="icon-glow"></div>
+                        </div>
+                        
+                        <div class="feature-content">
+                            <h3 class="feature-title">軍規安全</h3>
+                            <p class="feature-description">
+                                採用銀行級加密技術，多重驗證機制確保交易安全
+                            </p>
+                            
+                            <div class="feature-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">256</span>
+                                    <span class="stat-label">SSL加密</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">3</span>
+                                    <span class="stat-label">安全驗證</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-overlay"></div>
+                    </div>
+                    
+                    <div class="feature-card" data-feature="payment">
+                        <div class="feature-icon">
+                            <svg class="icon" viewBox="0 0 100 100">
+                                <use href="assets/icons/system-icons.svg#payment"></use>
+                            </svg>
+                            <div class="icon-glow"></div>
+                        </div>
+                        
+                        <div class="feature-content">
+                            <h3 class="feature-title">多元支付</h3>
+                            <p class="feature-description">
+                                整合速買配、綠界、藍新等主流支付平台，支援多種付款方式
+                            </p>
+                            
+                            <div class="feature-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">3+</span>
+                                    <span class="stat-label">支付平台</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">10+</span>
+                                    <span class="stat-label">付款方式</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-overlay"></div>
+                    </div>
+                    
+                    <div class="feature-card" data-feature="ai">
+                        <div class="feature-icon">
+                            <svg class="icon" viewBox="0 0 100 100">
+                                <use href="assets/icons/system-icons.svg#ai"></use>
+                            </svg>
+                            <div class="icon-glow"></div>
+                        </div>
+                        
+                        <div class="feature-content">
+                            <h3 class="feature-title">智能引擎</h3>
+                            <p class="feature-description">
+                                AI驅動的風險控制系統，智能偵測異常交易並自動處理
+                            </p>
+                            
+                            <div class="feature-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">24/7</span>
+                                    <span class="stat-label">監控保護</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">0.01%</span>
+                                    <span class="stat-label">誤判率</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 支付方式 -->
+        <section id="payment-methods" class="payment-methods-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <svg class="badge-icon" viewBox="0 0 100 100">
+                            <use href="assets/icons/system-icons.svg#payment"></use>
+                        </svg>
+                        <span>支付選項</span>
+                    </div>
+                    
+                    <h2 class="section-title">
+                        <span class="title-line">多元</span>
+                        <span class="title-line gradient-text">支付方式</span>
+                    </h2>
+                    
+                    <p class="section-description">
+                        支援多種主流支付平台，讓您選擇最適合的付款方式
+                    </p>
+                </div>
+                
+                <div class="payment-platforms">
+                    <div class="platform-card" data-platform="speedpay">
+                        <div class="platform-header">
+                            <div class="platform-logo">
+                                <img src="assets/images/speedpay-logo.png" alt="速買配">
+                            </div>
+                            <div class="platform-info">
+                                <h3 class="platform-name">速買配</h3>
+                                <p class="platform-description">台灣領先的第三方支付平台</p>
+                            </div>
+                            <div class="platform-status active">
+                                <div class="status-dot"></div>
+                                <span>可用</span>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-options">
+                            <div class="option-item">
+                                <svg class="option-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/payment-icons.svg#credit-card"></use>
+                                </svg>
+                                <span>信用卡</span>
+                            </div>
+                            <div class="option-item">
+                                <svg class="option-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/payment-icons.svg#atm"></use>
+                                </svg>
+                                <span>ATM轉帳</span>
+                            </div>
+                            <div class="option-item">
+                                <svg class="option-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/payment-icons.svg#convenience"></use>
+                                </svg>
+                                <span>超商代碼</span>
+                            </div>
+                            <div class="option-item">
+                                <svg class="option-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/payment-icons.svg#mobile"></use>
+                                </svg>
+                                <span>行動支付</span>
+                            </div>
+                        </div>
+                        
+                        <div class="platform-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">1.5%</span>
+                                <span class="stat-label">手續費</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">即時</span>
+                                <span class="stat-label">到帳</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="platform-card" data-platform="ecpay">
+                        <div class="platform-header">
+                            <div class="platform-logo">
+                                <img src="assets/images/ecpay-logo.png" alt="綠界">
+                            </div>
+                            <div class="platform-info">
+                                <h3 class="platform-name">綠界科技</h3>
+                                <p class="platform-description">全方位金流服務提供商</p>
+                            </div>
+                            <div class="platform-status active">
+                                <div class="status-dot"></div>
+                                <span>可用</span>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-options">
+                            <div class="option-item">
+                                <svg class="option-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/payment-icons.svg#credit-card"></use>
+                                </svg>
+                                <span>信用卡</span>
+                            </div>
+                            <div class="option-item">
+                                <svg class="option-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/payment-icons.svg#web-atm"></use>
+                                </svg>
+                                <span>網路ATM</span>
+                            </div>
+                            <div class="option-item">
+                                <svg class="option-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/payment-icons.svg#convenience"></use>
+                                </svg>
+                                <span>超商付款</span>
+                            </div>
+                            <div class="option-item">
+                                <svg class="option-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/payment-icons.svg#apple-pay"></use>
+                                </svg>
+                                <span>Apple Pay</span>
+                            </div>
+                        </div>
+                        
+                        <div class="platform-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">1.8%</span>
+                                <span class="stat-label">手續費</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">T+1</span>
+                                <span class="stat-label">到帳</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="platform-card" data-platform="newebpay">
+                        <div class="platform-header">
+                            <div class="platform-logo">
+                                <img src="assets/images/newebpay-logo.png" alt="藍新">
+                            </div>
+                            <div class="platform-info">
+                                <h3 class="platform-name">藍新金流</h3>
+                                <p class="platform-description">專業的金融科技服務</p>
+                            </div>
+                            <div class="platform-status active">
+                                <div class="status-dot"></div>
+                                <span>可用</span>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-options">
+                            <div class="option-item">
+                                <svg class="option-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/payment-icons.svg#credit-card"></use>
+                                </svg>
+                                <span>信用卡</span>
+                            </div>
+                            <div class="option-item">
+                                <svg class="option-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/payment-icons.svg#line-pay"></use>
+                                </svg>
+                                <span>LINE Pay</span>
+                            </div>
+                            <div class="option-item">
+                                <svg class="option-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/payment-icons.svg#google-pay"></use>
+                                </svg>
+                                <span>Google Pay</span>
+                            </div>
+                            <div class="option-item">
+                                <svg class="option-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/payment-icons.svg#samsung-pay"></use>
+                                </svg>
+                                <span>Samsung Pay</span>
+                            </div>
+                        </div>
+                        
+                        <div class="platform-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">1.6%</span>
+                                <span class="stat-label">手續費</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">即時</span>
+                                <span class="stat-label">到帳</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                    </div>
+                    
+        <!-- 價格方案 -->
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <svg class="badge-icon" viewBox="0 0 100 100">
+                            <use href="assets/icons/system-icons.svg#star"></use>
+                        </svg>
+                        <span>贊助方案</span>
+                    </div>
+                    
+                    <h2 class="section-title">
+                        <span class="title-line">選擇最適合</span>
+                        <span class="title-line gradient-text">贊助方案</span>
+                    </h2>
+                    
+                    <p class="section-description">
+                        多種贊助方案滿足不同需求，享受專屬特權與優惠
+                    </p>
+                </div>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card" data-plan="basic">
+                        <div class="plan-header">
+                            <div class="plan-icon">
+                                <svg class="icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#basic"></use>
+                                </svg>
+                            </div>
+                            <h3 class="plan-name">基礎方案</h3>
+                            <p class="plan-description">適合新手玩家的入門選擇</p>
+                        </div>
+                        
+                        <div class="plan-pricing">
+                            <div class="price-amount">
+                                <span class="currency">NT$</span>
+                                <span class="amount">100</span>
+                            </div>
+                            <div class="price-period">單次贊助</div>
+                        </div>
+                        
+                        <div class="plan-features">
+                            <div class="feature-item">
+                                <svg class="feature-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#check"></use>
+                                </svg>
+                                <span>基礎遊戲道具</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#check"></use>
+                                </svg>
+                                <span>15秒快速發放</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#check"></use>
+                                </svg>
+                                <span>24/7客服支援</span>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-action">
+                            <button class="btn btn-outline" data-plan="basic">
+                                <span>選擇方案</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-card featured" data-plan="premium">
+                        <div class="plan-badge">推薦</div>
+                        
+                        <div class="plan-header">
+                            <div class="plan-icon">
+                                <svg class="icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#premium"></use>
+                                </svg>
+                            </div>
+                            <h3 class="plan-name">進階方案</h3>
+                            <p class="plan-description">最受歡迎的性價比選擇</p>
+                        </div>
+                        
+                        <div class="plan-pricing">
+                            <div class="price-amount">
+                                <span class="currency">NT$</span>
+                                <span class="amount">500</span>
+                            </div>
+                            <div class="price-period">單次贊助</div>
+                            <div class="price-discount">額外贈送20%</div>
+                        </div>
+                        
+                        <div class="plan-features">
+                            <div class="feature-item">
+                                <svg class="feature-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#check"></use>
+                                </svg>
+                                <span>高級遊戲道具</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#check"></use>
+                                </svg>
+                                <span>10秒極速發放</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#check"></use>
+                                </svg>
+                                <span>專屬客服通道</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#check"></use>
+                                </svg>
+                                <span>VIP專屬特權</span>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-action">
+                            <button class="btn btn-primary btn-glow" data-plan="premium">
+                                <span>立即選擇</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-card" data-plan="ultimate">
+                        <div class="plan-header">
+                            <div class="plan-icon">
+                                <svg class="icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#ultimate"></use>
+                                </svg>
+                            </div>
+                            <h3 class="plan-name">至尊方案</h3>
+                            <p class="plan-description">頂級玩家的終極體驗</p>
+                        </div>
+                        
+                        <div class="plan-pricing">
+                            <div class="price-amount">
+                                <span class="currency">NT$</span>
+                                <span class="amount">1000</span>
+                            </div>
+                            <div class="price-period">單次贊助</div>
+                            <div class="price-discount">額外贈送50%</div>
+                        </div>
+                        
+                        <div class="plan-features">
+                            <div class="feature-item">
+                                <svg class="feature-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#check"></use>
+                                </svg>
+                                <span>頂級稀有道具</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#check"></use>
+                                </svg>
+                                <span>5秒閃電發放</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#check"></use>
+                                </svg>
+                                <span>專屬管家服務</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#check"></use>
+                                </svg>
+                                <span>至尊會員特權</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg class="feature-icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#check"></use>
+                                </svg>
+                                <span>限定專屬內容</span>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-action">
+                            <button class="btn btn-outline" data-plan="ultimate">
+                                <span>選擇方案</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 系統狀態 -->
+        <section id="status" class="status-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <svg class="badge-icon" viewBox="0 0 100 100">
+                            <use href="assets/icons/system-icons.svg#monitor"></use>
+                        </svg>
+                        <span>系統監控</span>
+                    </div>
+                    
+                    <h2 class="section-title">
+                        <span class="title-line">即時</span>
+                        <span class="title-line gradient-text">系統狀態</span>
+                    </h2>
+                    
+                    <p class="section-description">
+                        24/7 全天候監控系統運行狀態，確保服務穩定可靠
+                    </p>
+                </div>
+                
+                <div class="status-grid">
+                    <div class="status-card" data-service="payment">
+                        <div class="status-header">
+                            <div class="status-icon">
+                                <svg class="icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#payment"></use>
+                                </svg>
+                            </div>
+                            <div class="status-info">
+                                <h3 class="status-title">支付系統</h3>
+                                <div class="status-indicator online">
+                                    <div class="indicator-dot"></div>
+                                    <span>正常運行</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="status-metrics">
+                            <div class="metric-item">
+                                <span class="metric-label">回應時間</span>
+                                <span class="metric-value" data-metric="latency">45ms</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">成功率</span>
+                                <span class="metric-value" data-metric="success">99.9%</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">今日交易</span>
+                                <span class="metric-value" data-metric="transactions">1,247</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="status-card" data-service="api">
+                        <div class="status-header">
+                            <div class="status-icon">
+                                <svg class="icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#api"></use>
+                                </svg>
+                            </div>
+                            <div class="status-info">
+                                <h3 class="status-title">API 服務</h3>
+                                <div class="status-indicator online">
+                                    <div class="indicator-dot"></div>
+                                    <span>正常運行</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="status-metrics">
+                            <div class="metric-item">
+                                <span class="metric-label">回應時間</span>
+                                <span class="metric-value" data-metric="latency">23ms</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">可用性</span>
+                                <span class="metric-value" data-metric="uptime">99.99%</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">請求數</span>
+                                <span class="metric-value" data-metric="requests">15,432</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="status-card" data-service="database">
+                        <div class="status-header">
+                            <div class="status-icon">
+                                <svg class="icon" viewBox="0 0 100 100">
+                                    <use href="assets/icons/system-icons.svg#database"></use>
+                                </svg>
+                            </div>
+                            <div class="status-info">
+                                <h3 class="status-title">資料庫</h3>
+                                <div class="status-indicator online">
+                                    <div class="indicator-dot"></div>
+                                    <span>正常運行</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="status-metrics">
+                            <div class="metric-item">
+                                <span class="metric-label">查詢時間</span>
+                                <span class="metric-value" data-metric="query-time">12ms</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">連線數</span>
+                                <span class="metric-value" data-metric="connections">156</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">使用率</span>
+                                <span class="metric-value" data-metric="usage">67%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 頁腳 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg class="logo-icon" viewBox="0 0 100 100">
+                            <use href="assets/icons/system-icons.svg#logo"></use>
+                        </svg>
+                        <span class="logo-text">4D科技贊助系統</span>
+                    </div>
+                    
+                    <p class="footer-description">
+                        領先業界的自動贊助系統，提供最安全、最快速的支付體驗。
+                        整合多重支付閘道，讓贊助變得簡單而可靠。
+                    </p>
+                    
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 100 100">
+                                <use href="assets/icons/social-icons.svg#facebook"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 100 100">
+                                <use href="assets/icons/social-icons.svg#twitter"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Discord">
+                            <svg viewBox="0 0 100 100">
+                                <use href="assets/icons/social-icons.svg#discord"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg viewBox="0 0 100 100">
+                                <use href="assets/icons/social-icons.svg#github"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">快速連結</h3>
+                    <ul class="footer-links">
+                        <li><a href="sponsor.html">立即贊助</a></li>
+                        <li><a href="speedbuy.html">速買模式</a></li>
+                        <li><a href="user-center.html">用戶中心</a></li>
+                        <li><a href="admin.html">管理後台</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">支付方式</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">速買配</a></li>
+                        <li><a href="#">綠界科技</a></li>
+                        <li><a href="#">藍新金流</a></li>
+                        <li><a href="#">信用卡支付</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">幫助與支持</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">使用說明</a></li>
+                        <li><a href="#">常見問題</a></li>
+                        <li><a href="#">聯絡客服</a></li>
+                        <li><a href="#">意見回饋</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">法律條款</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">服務條款</a></li>
+                        <li><a href="#">隱私政策</a></li>
+                        <li><a href="#">退款政策</a></li>
+                        <li><a href="#">免責聲明</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 4D科技贊助系統. 版權所有</p>
+                </div>
+                
+                <div class="footer-badges">
+                    <div class="security-badge">
+                        <svg class="badge-icon" viewBox="0 0 100 100">
+                            <use href="assets/icons/system-icons.svg#security"></use>
+                        </svg>
+                        <span>SSL 安全認證</span>
+                    </div>
+                    
+                    <div class="security-badge">
+                        <svg class="badge-icon" viewBox="0 0 100 100">
+                            <use href="assets/icons/system-icons.svg#verified"></use>
+                        </svg>
+                        <span>官方認證</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 登入模態 -->
+    <div id="loginModal" class="modal" aria-hidden="true">
+        <div class="modal-overlay" data-close-modal></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title">Jy Tech Team - Login</h2>
+                <button class="modal-close" data-close-modal aria-label="關閉">
+                    <svg viewBox="0 0 100 100">
+                        <use href="assets/icons/system-icons.svg#close"></use>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="username" class="form-label">用戶名稱</label>
+                        <input type="text" id="username" name="username" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">密碼</label>
+                        <input type="password" id="password" name="password" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="remember" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">記住我</span>
+                        </label>
+                        
+                        <a href="#" class="forgot-link">忘記密碼?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>登入</span>
+                        <div class="btn-ripple"></div>
+                    </button>
+                </form>
+                
+                <div class="login-divider">
+                    <span>或</span>
+                </div>
+                
+                <div class="social-login">
+                    <button class="btn btn-social" data-provider="google">
+                        <svg class="btn-icon" viewBox="0 0 100 100">
+                            <use href="assets/icons/social-icons.svg#google"></use>
+                        </svg>
+                        <span>使用 Google 登入</span>
+                    </button>
+                    
+                    <button class="btn btn-social" data-provider="discord">
+                        <svg class="btn-icon" viewBox="0 0 100 100">
+                            <use href="assets/icons/social-icons.svg#discord"></use>
+                        </svg>
+                        <span>使用 Discord 登入</span>
+                    </button>
+                </div>
+                
+                <div class="register-prompt">
+                    <p>還沒有帳戶？ <a href="register.html" class="register-link">立即註冊</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 通知容器 -->
+    <div id="notificationContainer" class="notification-container"></div>
+    
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/notifications.js"></script>
+</body>
+</html>
+
+<div class="preview-video-container">
+  <video class="preview-video" src="assets/preview.mp4" autoplay muted loop playsinline></video>
+</div>
+
+.preview-video-container {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 32px;
+}
+.preview-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+  filter: blur(2px) brightness(0.8);
+  pointer-events: none;
+}
+
+
+

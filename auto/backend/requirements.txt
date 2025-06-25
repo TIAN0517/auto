@@ -1,0 +1,205 @@
+# 最高階自動贊助系統 - Python 依賴包
+# 4D科技風格 - 後端依賴配置
+# 版本: 1.0.0
+
+# 核心框架
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+starlette==0.27.0
+
+# 資料庫相關
+sqlalchemy==2.0.23
+mysqlclient==2.2.0
+aiomysql==0.2.0
+alembic==1.12.1
+
+# Redis 緩存
+redis==5.0.1
+aioredis==2.0.1
+
+# 認證和安全
+passlib[bcrypt]==1.7.4
+python-jose[cryptography]==3.3.0
+python-multipart==0.0.6
+
+# 任務調度
+APScheduler==3.10.4
+
+# HTTP 客戶端
+httpx==0.25.2
+aiohttp==3.9.1
+
+# 數據驗證
+pydantic==2.5.0
+pydantic-settings==2.1.0
+email-validator==2.1.0
+
+# 日期時間處理
+python-dateutil==2.8.2
+pytz==2023.3
+
+# JSON 處理
+orjson==3.9.10
+
+# 環境變量
+python-dotenv==1.0.0
+
+# 日誌記錄
+loguru==0.7.2
+
+# 監控和性能
+prometheus-client==0.19.0
+psutil==5.9.6
+
+# WebSocket 支持
+websockets==12.0
+
+# 文件處理
+Pillow==10.1.0
+
+# 加密解密
+cryptography==41.0.7
+
+# 配置管理
+pyyaml==6.0.1
+
+# 開發和測試工具
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+black==23.11.0
+flake8==6.1.0
+isort==5.12.0
+mypy==1.7.1
+
+# 生產環境
+gunicorn==21.2.0
+
+# 額外工具
+click==8.1.7
+rich==13.7.0
+tqdm==4.66.1
+
+# API 文檔
+fastapi-users==12.1.2
+
+# 支付相關（如需要）
+stripe==7.8.0
+paypalrestsdk==1.13.3
+
+# 郵件發送
+fastapi-mail==1.4.1
+
+# 限流
+slowapi==0.1.9
+
+# CORS 支持
+fastapi-cors==0.0.6
+
+# 數據序列化
+marshmallow==3.20.1
+
+# 緩存裝飾器
+cachetools==5.3.2
+
+# 異步任務
+celery==5.3.4
+
+# 消息隊列
+kombu==5.3.4
+
+# 數據分析（可選）
+pandas==2.1.3
+numpy==1.25.2
+
+# 圖表生成（可選）
+matplotlib==3.8.2
+seaborn==0.13.0
+
+# 機器學習（推薦系統，可選）
+scikit-learn==1.3.2
+
+# 地理位置（可選）
+geoip2==4.7.0
+
+# 二維碼生成
+qrcode[pil]==7.4.2
+
+# 條碼生成
+python-barcode==0.15.1
+
+# PDF 生成
+reportlab==4.0.7
+
+# Excel 處理
+openpyxl==3.1.2
+
+# 正則表達式增強
+regex==2023.10.3
+
+# 字符串處理
+fuzzywuzzy==0.18.0
+python-levenshtein==0.23.0
+
+# 國際化
+babel==2.13.1
+
+# 模板引擎
+jinja2==3.1.2
+
+# 靜態文件服務
+whitenoise==6.6.0
+
+# 健康檢查
+healthcheck==1.3.3
+
+# 配置驗證
+cerberus==1.3.5
+
+# 命令行工具
+typer==0.9.0
+
+# 網絡工具
+requests==2.31.0
+urllib3==2.1.0
+
+# 時間處理
+arrow==1.3.0
+
+# JSON Web Token
+PyJWT==2.8.0
+
+# 異步支持
+aiofiles==23.2.1
+
+# 類型提示
+typing-extensions==4.8.0
+
+# 集合工具
+collections-extended==2.0.2
+
+# 密鑰管理
+keyring==24.3.0
+
+# 平台信息
+platform==1.0.8
+
+# 路徑處理
+path==16.7.1
+
+# 終端工具
+terminal==0.4.0
+
+# 標準輸入輸出
+stdin==1.0.1
+stdout==1.0.1
+stderr==1.0.1
+
+# 編碼處理
+encoding==0.8
+
+# USDT支付支持
+web3==6.11.3
+tronpy==0.4.0
+eth-account==0.9.0
+eth-utils==2.2.0

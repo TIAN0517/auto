@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  itemshop:
+    build: .
+    container_name: itemshop-app
+    ports:
+      - "80:80"
+      - "8080:8080"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8080
+      - DEBUG=false
+    volumes:
+      - ./logs:/app/logs
+      - ./database:/app/database
+      - ./speedpay_config:/app/speedpay_config
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - itemshop-network
+
+  # 可選：Redis緩存服務
+  redis:
+    image: redis:7-alpine
+    container_name: itemshop-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    networks:
+      - itemshop-network
+
+  # 可選：MySQL數據庫服務
+  mysql:
+    image: mysql:8.0
+    container_name: itemshop-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: itemshop123
+      MYSQL_DATABASE: itemshop
+      MYSQL_USER: itemshop
+      MYSQL_PASSWORD: itemshop123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
+    networks:
+      - itemshop-network
+
+volumes:
+  redis-data:
+  mysql-data:
+
+networks:
+  itemshop-network:
+    driver: bridge 

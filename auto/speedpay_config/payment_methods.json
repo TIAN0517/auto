@@ -1,0 +1,404 @@
+{
+  "speedpay_payment_methods": {
+    "credit_card": {
+      "id": "credit_card",
+      "name": "信用卡",
+      "display_name": "信用卡付款",
+      "description": "支援VISA、MasterCard、JCB等主要信用卡",
+      "enabled": true,
+      "priority": 1,
+      "icon": "credit-card",
+      "logo_url": "/assets/payment-logos/credit-card.svg",
+      "fee_config": {
+        "type": "percentage",
+        "rate": 0.028,
+        "min_fee": 5,
+        "max_fee": 1000,
+        "description": "手續費 2.8%"
+      },
+      "amount_limits": {
+        "min_amount": 1,
+        "max_amount": 100000,
+        "currency": "TWD"
+      },
+      "processing_info": {
+        "processing_time": "即時",
+        "settlement_time": "T+1",
+        "refund_support": true,
+        "partial_refund": true
+      },
+      "supported_cards": [
+        {
+          "brand": "VISA",
+          "logo": "/assets/payment-logos/visa.svg",
+          "enabled": true
+        },
+        {
+          "brand": "MasterCard",
+          "logo": "/assets/payment-logos/mastercard.svg",
+          "enabled": true
+        },
+        {
+          "brand": "JCB",
+          "logo": "/assets/payment-logos/jcb.svg",
+          "enabled": true
+        },
+        {
+          "brand": "American Express",
+          "logo": "/assets/payment-logos/amex.svg",
+          "enabled": false
+        }
+      ],
+      "security_features": [
+        "3D Secure",
+        "SSL加密",
+        "PCI DSS認證",
+        "即時風險檢測"
+      ]
+    },
+    "atm": {
+      "id": "atm",
+      "name": "ATM轉帳",
+      "display_name": "ATM轉帳付款",
+      "description": "透過ATM進行轉帳付款，安全便利",
+      "enabled": true,
+      "priority": 2,
+      "icon": "atm",
+      "logo_url": "/assets/payment-logos/atm.svg",
+      "fee_config": {
+        "type": "percentage",
+        "rate": 0.015,
+        "min_fee": 15,
+        "max_fee": 500,
+        "description": "手續費 1.5%"
+      },
+      "amount_limits": {
+        "min_amount": 10,
+        "max_amount": 50000,
+        "currency": "TWD"
+      },
+      "processing_info": {
+        "processing_time": "1-3個工作天",
+        "settlement_time": "T+3",
+        "refund_support": true,
+        "partial_refund": false
+      },
+      "supported_banks": [
+        {
+          "bank_code": "004",
+          "bank_name": "台灣銀行",
+          "enabled": true
+        },
+        {
+          "bank_code": "005",
+          "bank_name": "土地銀行",
+          "enabled": true
+        },
+        {
+          "bank_code": "006",
+          "bank_name": "合作金庫",
+          "enabled": true
+        },
+        {
+          "bank_code": "007",
+          "bank_name": "第一銀行",
+          "enabled": true
+        },
+        {
+          "bank_code": "008",
+          "bank_name": "華南銀行",
+          "enabled": true
+        },
+        {
+          "bank_code": "009",
+          "bank_name": "彰化銀行",
+          "enabled": true
+        },
+        {
+          "bank_code": "011",
+          "bank_name": "上海銀行",
+          "enabled": true
+        },
+        {
+          "bank_code": "012",
+          "bank_name": "台北富邦",
+          "enabled": true
+        }
+      ],
+      "instructions": [
+        "請至任一ATM機台",
+        "選擇轉帳功能",
+        "輸入指定帳號",
+        "輸入轉帳金額",
+        "完成轉帳並保留收據"
+      ]
+    },
+    "convenience_store": {
+      "id": "convenience_store",
+      "name": "超商代碼",
+      "display_name": "超商代碼繳費",
+      "description": "7-11、全家、萊爾富、OK超商代碼繳費",
+      "enabled": true,
+      "priority": 3,
+      "icon": "store",
+      "logo_url": "/assets/payment-logos/cvs.svg",
+      "fee_config": {
+        "type": "percentage",
+        "rate": 0.02,
+        "min_fee": 10,
+        "max_fee": 300,
+        "description": "手續費 2%"
+      },
+      "amount_limits": {
+        "min_amount": 30,
+        "max_amount": 20000,
+        "currency": "TWD"
+      },
+      "processing_info": {
+        "processing_time": "即時",
+        "settlement_time": "T+1",
+        "refund_support": true,
+        "partial_refund": false,
+        "expiry_hours": 72
+      },
+      "supported_stores": [
+        {
+          "store_code": "711",
+          "store_name": "7-ELEVEN",
+          "logo": "/assets/payment-logos/711.svg",
+          "enabled": true,
+          "operating_hours": "24小時"
+        },
+        {
+          "store_code": "family",
+          "store_name": "全家便利商店",
+          "logo": "/assets/payment-logos/family.svg",
+          "enabled": true,
+          "operating_hours": "24小時"
+        },
+        {
+          "store_code": "hilife",
+          "store_name": "萊爾富",
+          "logo": "/assets/payment-logos/hilife.svg",
+          "enabled": true,
+          "operating_hours": "06:00-24:00"
+        },
+        {
+          "store_code": "ok",
+          "store_name": "OK便利商店",
+          "logo": "/assets/payment-logos/ok.svg",
+          "enabled": true,
+          "operating_hours": "06:00-24:00"
+        }
+      ],
+      "instructions": [
+        "取得繳費代碼",
+        "前往指定超商",
+        "告知店員代碼繳費",
+        "繳費完成後保留收據",
+        "系統將自動確認付款"
+      ]
+    },
+    "virtual_account": {
+      "id": "virtual_account",
+      "name": "虛擬帳號",
+      "display_name": "銀行虛擬帳號",
+      "description": "專屬虛擬帳號轉帳，安全快速",
+      "enabled": true,
+      "priority": 4,
+      "icon": "bank",
+      "logo_url": "/assets/payment-logos/virtual-account.svg",
+      "fee_config": {
+        "type": "percentage",
+        "rate": 0.01,
+        "min_fee": 5,
+        "max_fee": 200,
+        "description": "手續費 1%"
+      },
+      "amount_limits": {
+        "min_amount": 1,
+        "max_amount": 200000,
+        "currency": "TWD"
+      },
+      "processing_info": {
+        "processing_time": "即時",
+        "settlement_time": "T+1",
+        "refund_support": true,
+        "partial_refund": true,
+        "expiry_hours": 24
+      },
+      "features": [
+        "專屬虛擬帳號",
+        "即時入帳確認",
+        "支援網路銀行",
+        "支援行動銀行",
+        "24小時服務"
+      ],
+      "instructions": [
+        "取得專屬虛擬帳號",
+        "使用網路銀行或ATM轉帳",
+        "輸入虛擬帳號",
+        "輸入指定金額",
+        "完成轉帳即時入帳"
+      ]
+    },
+    "mobile_payment": {
+      "id": "mobile_payment",
+      "name": "行動支付",
+      "display_name": "行動支付",
+      "description": "LINE Pay、街口支付、Apple Pay等行動支付",
+      "enabled": true,
+      "priority": 5,
+      "icon": "mobile",
+      "logo_url": "/assets/payment-logos/mobile-pay.svg",
+      "fee_config": {
+        "type": "percentage",
+        "rate": 0.025,
+        "min_fee": 3,
+        "max_fee": 500,
+        "description": "手續費 2.5%"
+      },
+      "amount_limits": {
+        "min_amount": 1,
+        "max_amount": 50000,
+        "currency": "TWD"
+      },
+      "processing_info": {
+        "processing_time": "即時",
+        "settlement_time": "T+1",
+        "refund_support": true,
+        "partial_refund": true
+      },
+      "supported_wallets": [
+        {
+          "wallet_id": "linepay",
+          "wallet_name": "LINE Pay",
+          "logo": "/assets/payment-logos/linepay.svg",
+          "enabled": true
+        },
+        {
+          "wallet_id": "jkopay",
+          "wallet_name": "街口支付",
+          "logo": "/assets/payment-logos/jkopay.svg",
+          "enabled": true
+        },
+        {
+          "wallet_id": "applepay",
+          "wallet_name": "Apple Pay",
+          "logo": "/assets/payment-logos/applepay.svg",
+          "enabled": true
+        },
+        {
+          "wallet_id": "googlepay",
+          "wallet_name": "Google Pay",
+          "logo": "/assets/payment-logos/googlepay.svg",
+          "enabled": true
+        },
+        {
+          "wallet_id": "samsungpay",
+          "wallet_name": "Samsung Pay",
+          "logo": "/assets/payment-logos/samsungpay.svg",
+          "enabled": false
+        }
+      ],
+      "features": [
+        "一鍵快速付款",
+        "指紋/Face ID驗證",
+        "即時付款確認",
+        "支援點數回饋",
+        "安全加密保護"
+      ]
+    }
+  },
+  "payment_flow_config": {
+    "default_expiry_minutes": 30,
+    "max_retry_attempts": 3,
+    "callback_timeout_seconds": 30,
+    "notification_retry_intervals": [60, 300, 900, 3600],
+    "auto_cancel_expired_orders": true,
+    "require_user_confirmation": true,
+    "enable_payment_memo": true,
+    "max_memo_length": 100
+  },
+  "ui_config": {
+    "theme": "4d-tech",
+    "primary_color": "#00f5ff",
+    "secondary_color": "#ff6b35",
+    "background_gradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    "card_style": {
+      "border_radius": "15px",
+      "box_shadow": "0 8px 32px rgba(0, 245, 255, 0.3)",
+      "backdrop_filter": "blur(10px)",
+      "border": "1px solid rgba(255, 255, 255, 0.2)"
+    },
+    "animation": {
+      "hover_scale": 1.05,
+      "transition_duration": "0.3s",
+      "glow_effect": true
+    },
+    "responsive_breakpoints": {
+      "mobile": "768px",
+      "tablet": "1024px",
+      "desktop": "1200px"
+    }
+  },
+  "security_config": {
+    "encryption": {
+      "algorithm": "AES-256-GCM",
+      "key_rotation_days": 90
+    },
+    "signature": {
+      "algorithm": "HMAC-SHA256",
+      "header_name": "X-SpeedPay-Signature"
+    },
+    "rate_limiting": {
+      "max_requests_per_minute": 60,
+      "max_requests_per_hour": 1000,
+      "blocked_duration_minutes": 15
+    },
+    "fraud_detection": {
+      "enabled": true,
+      "max_amount_threshold": 50000,
+      "velocity_check": true,
+      "ip_geolocation_check": true
+    }
+  },
+  "notification_config": {
+    "webhook": {
+      "enabled": true,
+      "retry_attempts": 5,
+      "retry_intervals": [30, 60, 300, 900, 3600],
+      "timeout_seconds": 30
+    },
+    "email": {
+      "enabled": true,
+      "templates": {
+        "payment_success": "payment_success_template",
+        "payment_failed": "payment_failed_template",
+        "payment_pending": "payment_pending_template"
+      }
+    },
+    "sms": {
+      "enabled": false,
+      "provider": "twilio"
+    }
+  },
+  "analytics_config": {
+    "tracking": {
+      "enabled": true,
+      "events": [
+        "payment_initiated",
+        "payment_method_selected",
+        "payment_completed",
+        "payment_failed",
+        "payment_cancelled"
+      ]
+    },
+    "metrics": {
+      "success_rate": true,
+      "average_processing_time": true,
+      "popular_payment_methods": true,
+      "revenue_tracking": true
+    }
+  }
+}

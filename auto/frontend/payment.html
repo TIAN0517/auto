@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支付中心 - Jy自動贊助系統</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="description" content="安全快速的支付體驗 - 速買配整合">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 載入畫面 -->
+    <div id="loading-screen">
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">支付系統初始化中...</div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+        <div class="loading-particles"></div>
+    </div>
+
+    <!-- 導航欄 -->
+    <header class="navbar">
+        <nav class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Jy Auto Sponsor</span>
+                <span class="logo-version">v3.0</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">首頁</a></li>
+                <li><a href="sponsor.html" class="nav-link">贊助</a></li>
+                <li><a href="payment.html" class="nav-link active">支付</a></li>
+                <li><a href="user-dashboard.html" class="nav-link">用戶中心</a></li>
+                <li><a href="admin.html" class="nav-link admin-link">管理後台</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <div class="security-indicator">
+                    <span class="security-icon">🔒</span>
+                    <span class="security-text">SSL安全</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主要內容 -->
+    <main class="main-content">
+        <!-- 支付容器 -->
+        <div class="payment-container">
+            <!-- 支付標題區 -->
+            <section class="payment-header">
+                <div class="payment-title">
+                    <h1 class="title-main">
+                        <span class="title-icon">💳</span>
+                        <span class="gradient-text">安全支付中心</span>
+                    </h1>
+                    <p class="title-subtitle">選擇您偏好的支付方式，享受極速到帳體驗</p>
+                </div>
+                <div class="security-badges">
+                    <div class="badge ssl-badge">
+                        <span class="badge-icon">🔐</span>
+                        <span class="badge-text">SSL加密</span>
+                    </div>
+                    <div class="badge pci-badge">
+                        <span class="badge-icon">🛡️</span>
+                        <span class="badge-text">PCI認證</span>
+                    </div>
+                    <div class="badge instant-badge">
+                        <span class="badge-icon">⚡</span>
+                        <span class="badge-text">即時到帳</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 訂單摘要 -->
+            <section class="order-summary">
+                <div class="summary-card">
+                    <h3 class="summary-title">訂單摘要</h3>
+                    <div class="summary-content">
+                        <div class="order-item">
+                            <span class="item-name">贊助套餐</span>
+                            <span class="item-value" id="packageName">VIP套餐</span>
+                        </div>
+                        <div class="order-item">
+                            <span class="item-name">金額</span>
+                            <span class="item-value" id="packageAmount">NT$ 1,000</span>
+                        </div>
+                        <div class="order-item">
+                            <span class="item-name">手續費</span>
+                            <span class="item-value" id="processingFee">NT$ 0</span>
+                        </div>
+                        <div class="order-divider"></div>
+                        <div class="order-total">
+                            <span class="total-label">總計</span>
+                            <span class="total-amount" id="totalAmount">NT$ 1,000</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 支付方式選擇 -->
+            <section class="payment-methods">
+                <h3 class="methods-title">選擇支付方式</h3>
+                
+                <!-- 速買配 (主要推薦) -->
+                <div class="payment-method speedpay-method recommended" data-method="speedpay">
+                    <div class="method-header">
+                        <div class="method-logo">
+                            <img src="assets/payment-logos/speedpay.png" alt="速買配" class="logo-img">
+                        </div>
+                        <div class="method-info">
+                            <h4 class="method-name">速買配 SpeedPay</h4>
+                            <p class="method-desc">台灣本土金流 • 即時到帳 • 手續費最低</p>
+                        </div>
+                        <div class="method-badges">
+                            <span class="badge recommended-badge">推薦</span>
+                            <span class="badge instant-badge">即時</span>
+                        </div>
+                    </div>
+                    <div class="method-options">
+                        <div class="payment-option" data-option="credit">
+                            <span class="option-icon">💳</span>
+                            <span class="option-text">信用卡</span>
+                        </div>
+                        <div class="payment-option" data-option="atm">
+                            <span class="option-icon">🏧</span>
+                            <span class="option-text">ATM轉帳</span>
+                        </div>
+                        <div class="payment-option" data-option="cvs">
+                            <span class="option-icon">🏪</span>
+                            <span class="option-text">超商代碼</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 綠界科技 (備用) -->
+                <div class="payment-method ecpay-method" data-method="ecpay">
+                    <div class="method-header">
+                        <div class="method-logo">
+                            <img src="assets/payment-logos/ecpay.png" alt="綠界科技" class="logo-img">
+                        </div>
+                        <div class="method-info">
+                            <h4 class="method-name">綠界科技 ECPay</h4>
+                            <p class="method-desc">多元支付選擇 • 安全可靠</p>
+                        </div>
+                        <div class="method-badges">
+                            <span class="badge backup-badge">備用</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 藍新金流 (備用) -->
+                <div class="payment-method newebpay-method" data-method="newebpay">
+                    <div class="method-header">
+                        <div class="method-logo">
+                            <img src="assets/payment-logos/newebpay.png" alt="藍新金流" class="logo-img">
+                        </div>
+                        <div class="method-info">
+                            <h4 class="method-name">藍新金流 NewebPay</h4>
+                            <p class="method-desc">多元支付 • 安全可靠 • 支援多種銀行</p>
+                        </div>
+                        <div class="method-badges">
+                            <span class="badge secure-badge">安全</span>
+                            <span class="badge fast-badge">快速</span>
+                        </div>
+                    </div>
+                    <div class="method-options">
+                        <div class="payment-option" data-option="credit">
+                            <span class="option-icon">💳</span>
+                            <span class="option-text">信用卡</span>
+                        </div>
+                        <div class="payment-option" data-option="webatm">
+                            <span class="option-icon">🏦</span>
+                            <span class="option-text">網路ATM</span>
+                        </div>
+                        <div class="payment-option" data-option="atm">
+                            <span class="option-icon">🏧</span>
+                            <span class="option-text">ATM轉帳</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- USDT支付 (加密貨幣) -->
+                <div class="payment-method usdt-method crypto-method" data-method="usdt">
+                    <div class="method-header">
+                        <div class="method-logo">
+                            <img src="assets/payment-logos/usdt-logo.svg" alt="USDT" class="logo-img" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiMwMEE2NzMiLz4KPHN2ZyB4PSI4IiB5PSI4IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPgo8cGF0aCBkPSJNMTIgMkM2LjQ4IDIgMiA2LjQ4IDIgMTJzNC40OCAxMCAxMCAxMCAxMC00LjQ4IDEwLTEwUzE3LjUyIDIgMTIgMnptMCAxOGMtNC40MSAwLTgtMy41OS04LTggMC00LjQxIDMuNTktOCA4LTggNC40MSAwIDggMy41OSA4IDggMCA0LjQxLTMuNTkgOC04IDh6Ii8+CjxwYXRoIGQ9Ik0xMiA2Yy0yLjIxIDAtNCAxLjc5LTQgNHMxLjc5IDQgNCA0IDQtMS43OSA0LTQtMS43OS00LTQtNHoiLz4KPC9zdmc+Cjwvc3ZnPgo='">
+                        </div>
+                        <div class="method-info">
+                            <h4 class="method-name">USDT 加密貨幣支付</h4>
+                            <p class="method-desc">全球通用 • 手續費低 • 即時到帳</p>
+                        </div>
+                        <div class="method-badges">
+                            <span class="badge crypto-badge">加密貨幣</span>
+                            <span class="badge global-badge">全球</span>
+                        </div>
+                    </div>
+                    <div class="method-options">
+                        <div class="payment-option" data-option="erc20">
+                            <span class="option-icon">🔷</span>
+                            <span class="option-text">ERC-20 (以太坊)</span>
+                            <span class="option-fee">手續費 0.5%</span>
+                        </div>
+                        <div class="payment-option" data-option="trc20">
+                            <span class="option-icon">🔶</span>
+                            <span class="option-text">TRC-20 (波場)</span>
+                            <span class="option-fee">手續費 0.3%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 支付表單 -->
+            <section class="payment-form" id="paymentForm">
+                <form id="speedpayForm" class="payment-form-content">
+                    <div class="form-group">
+                        <label for="customerEmail" class="form-label">電子郵件</label>
+                        <input type="email" id="customerEmail" name="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone" class="form-label">聯絡電話</label>
+                        <input type="tel" id="customerPhone" name="phone" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gameAccount" class="form-label">遊戲帳號</label>
+                        <input type="text" id="gameAccount" name="account" class="form-input" required>
+                    </div>
+                    
+                    <!-- 支付按鈕 -->
+                    <div class="payment-actions">
+                        <button type="button" class="btn-secondary" id="cancelBtn">
+                            <span class="btn-icon">❌</span>
+                            <span class="btn-text">取消</span>
+                        </button>
+                        <button type="submit" class="btn-primary payment-btn" id="paymentBtn">
+                            <span class="btn-icon">💳</span>
+                            <span class="btn-text">確認支付</span>
+                            <span class="btn-amount" id="btnAmount">NT$ 1,000</span>
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- 支付狀態 -->
+            <section class="payment-status" id="paymentStatus" style="display: none;">
+                <div class="status-card">
+                    <div class="status-icon" id="statusIcon">⏳</div>
+                    <h3 class="status-title" id="statusTitle">處理中...</h3>
+                    <p class="status-message" id="statusMessage">正在處理您的支付請求，請稍候</p>
+                    <div class="status-progress">
+                        <div class="progress-bar" id="statusProgress"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 支付結果顯示區域 -->
+            <div id="paymentResult" class="payment-result" style="display: none;">
+                <!-- 支付結果內容將在這裡動態顯示 -->
+            </div>
+
+            <!-- USDT支付說明區域 -->
+            <div id="usdtPaymentInstructions" class="usdt-payment-instructions">
+                <!-- USDT支付說明將在這裡動態顯示 -->
+            </div>
+
+            <!-- 消息提示區域 -->
+            <div id="messageContainer"></div>
+
+            <!-- 加載提示區域 -->
+            <div id="loadingContainer"></div>
+        </div>
+    </main>
+
+    <!-- 支付成功模態框 -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success-modal">
+            <div class="modal-header">
+                <span class="success-icon">✅</span>
+                <h3 class="modal-title">支付成功！</h3>
+            </div>
+            <div class="modal-body">
+                <p class="success-message">您的贊助已成功處理，道具將在15秒內自動發放到您的遊戲帳號。</p>
+                <div class="transaction-info">
+                    <div class="info-item">
+                        <span class="info-label">交易編號：</span>
+                        <span class="info-value" id="transactionId">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">支付時間：</span>
+                        <span class="info-value" id="paymentTime">-</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" id="closeSuccessModal">確定</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 支付失敗模態框 -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content error-modal">
+            <div class="modal-header">
+                <span class="error-icon">❌</span>
+                <h3 class="modal-title">支付失敗</h3>
+            </div>
+            <div class="modal-body">
+                <p class="error-message" id="errorMessage">支付過程中發生錯誤，請稍後再試或聯繫客服。</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="closeErrorModal">關閉</button>
+                <button class="btn-primary" id="retryPayment">重試</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 背景效果 -->
+    <div class="background-effects">
+        <div class="particle-field"></div>
+        <div class="grid-overlay"></div>
+        <div class="energy-waves"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/payment.js"></script>
+    <script src="js/speedpay.js"></script>
+    <script src="js/websocket.js"></script>
+    <script src="js/usdt-payment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</body>
+</html>

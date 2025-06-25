@@ -1,0 +1,85 @@
+<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="speedpayGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f7931e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffd23f;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d3748;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a202c;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景圓角矩形 -->
+  <rect x="2" y="2" width="196" height="76" rx="12" ry="12" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  
+  <!-- 閃電圖標 -->
+  <g transform="translate(15, 20)">
+    <!-- 主閃電 -->
+    <path d="M20 5 L8 25 L15 25 L10 40 L22 20 L15 20 L20 5 Z" fill="url(#speedpayGradient)" filter="url(#glow)">
+      <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- 小閃電裝飾 -->
+    <path d="M25 10 L22 18 L25 18 L23 25 L26 17 L23 17 L25 10 Z" fill="url(#speedpayGradient)" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.3;0.6" dur="1.5s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M5 15 L2 23 L5 23 L3 30 L6 22 L3 22 L5 15 Z" fill="url(#speedpayGradient)" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.2;0.4" dur="1.8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- 速買配文字 -->
+  <g transform="translate(55, 25)">
+    <!-- 速 -->
+    <text x="0" y="20" font-family="'Microsoft JhengHei', 'PingFang TC', sans-serif" font-size="18" font-weight="bold" fill="url(#textGradient)">速</text>
+    
+    <!-- 買 -->
+    <text x="22" y="20" font-family="'Microsoft JhengHei', 'PingFang TC', sans-serif" font-size="18" font-weight="bold" fill="url(#textGradient)">買</text>
+    
+    <!-- 配 -->
+    <text x="44" y="20" font-family="'Microsoft JhengHei', 'PingFang TC', sans-serif" font-size="18" font-weight="bold" fill="url(#textGradient)">配</text>
+    
+    <!-- SpeedPay 英文 -->
+    <text x="0" y="35" font-family="'Roboto', 'Arial', sans-serif" font-size="10" font-weight="500" fill="#64748b">SpeedPay</text>
+  </g>
+  
+  <!-- 裝飾元素 -->
+  <g opacity="0.3">
+    <!-- 速度線條 -->
+    <line x1="120" y1="25" x2="140" y2="25" stroke="url(#speedpayGradient)" stroke-width="2" stroke-linecap="round">
+      <animate attributeName="x2" values="140;160;140" dur="1s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="125" y1="35" x2="145" y2="35" stroke="url(#speedpayGradient)" stroke-width="1.5" stroke-linecap="round">
+      <animate attributeName="x2" values="145;165;145" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="130" y1="45" x2="150" y2="45" stroke="url(#speedpayGradient)" stroke-width="1" stroke-linecap="round">
+      <animate attributeName="x2" values="150;170;150" dur="1.4s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- 安全徽章 -->
+  <g transform="translate(160, 15)">
+    <circle cx="15" cy="15" r="12" fill="#10b981" opacity="0.1"/>
+    <path d="M15 8 L18 11 L22 7 M15 8 L12 11 L8 7" stroke="#10b981" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="15" y="25" font-family="'Roboto', sans-serif" font-size="6" text-anchor="middle" fill="#10b981">安全</text>
+  </g>
+  
+  <!-- 邊框發光效果 -->
+  <rect x="2" y="2" width="196" height="76" rx="12" ry="12" fill="none" stroke="url(#speedpayGradient)" stroke-width="0.5" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite"/>
+  </rect>
+</svg>

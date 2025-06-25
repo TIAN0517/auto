@@ -1,0 +1,202 @@
+2025-06-19 10:08:19,526 - main - ERROR - ÙYÁÏìßB½ÓÊ§”¡: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+2025-06-19 10:08:47,067 - main - ERROR - ÙYÁÏìßB½ÓÊ§”¡: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+2025-06-19 10:29:45,560 - main - INFO - é_°lÄ£Ê½£ºÌøß^ÙYÁÏìßB½Ó
+2025-06-19 10:29:45,563 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-19 10:29:45,563 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-19 10:29:45,563 - apscheduler.scheduler - INFO - Added job "ÇåÀíß^ÆÚ•şÔ’" to job store "default"
+2025-06-19 10:29:45,563 - apscheduler.scheduler - INFO - Added job "¸üĞÂÏµ½y½yÓ‹" to job store "default"
+2025-06-19 10:29:45,564 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-19 10:34:45,570 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 10:39:45 CST)" (scheduled at 2025-06-19 10:34:45.563193+08:00)
+2025-06-19 10:34:45,571 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 10:34:45,571 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 10:39:45 CST)" executed successfully
+2025-06-19 10:39:45,572 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 10:44:45 CST)" (scheduled at 2025-06-19 10:39:45.563193+08:00)
+2025-06-19 10:39:45,573 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 10:39:45,573 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 10:44:45 CST)" executed successfully
+2025-06-19 10:44:45,565 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 10:49:45 CST)" (scheduled at 2025-06-19 10:44:45.563193+08:00)
+2025-06-19 10:44:45,566 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 10:44:45,566 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 10:49:45 CST)" executed successfully
+2025-06-19 10:49:45,574 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 10:54:45 CST)" (scheduled at 2025-06-19 10:49:45.563193+08:00)
+2025-06-19 10:49:45,574 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 10:49:45,575 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 10:54:45 CST)" executed successfully
+2025-06-19 10:54:45,571 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 10:59:45 CST)" (scheduled at 2025-06-19 10:54:45.563193+08:00)
+2025-06-19 10:54:45,571 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 10:54:45,572 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 10:59:45 CST)" executed successfully
+2025-06-19 10:59:45,578 - apscheduler.executors.default - INFO - Running job "ÇåÀíß^ÆÚ•şÔ’ (trigger: interval[0:30:00], next run at: 2025-06-19 11:29:45 CST)" (scheduled at 2025-06-19 10:59:45.562942+08:00)
+2025-06-19 10:59:45,579 - main - INFO - ˆÌĞĞ•şÔ’ÇåÀíÈÎ„Õ
+2025-06-19 10:59:45,579 - apscheduler.executors.default - INFO - Job "ÇåÀíß^ÆÚ•şÔ’ (trigger: interval[0:30:00], next run at: 2025-06-19 11:29:45 CST)" executed successfully
+2025-06-19 10:59:45,580 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:04:45 CST)" (scheduled at 2025-06-19 10:59:45.563193+08:00)
+2025-06-19 10:59:45,580 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 10:59:45,580 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:04:45 CST)" executed successfully
+2025-06-19 11:04:45,567 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:09:45 CST)" (scheduled at 2025-06-19 11:04:45.563193+08:00)
+2025-06-19 11:04:45,567 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 11:04:45,568 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:09:45 CST)" executed successfully
+2025-06-19 11:09:45,564 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:14:45 CST)" (scheduled at 2025-06-19 11:09:45.563193+08:00)
+2025-06-19 11:09:45,565 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 11:09:45,565 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:14:45 CST)" executed successfully
+2025-06-19 11:14:45,574 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:19:45 CST)" (scheduled at 2025-06-19 11:14:45.563193+08:00)
+2025-06-19 11:14:45,575 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 11:14:45,575 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:19:45 CST)" executed successfully
+2025-06-19 11:19:45,575 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:24:45 CST)" (scheduled at 2025-06-19 11:19:45.563193+08:00)
+2025-06-19 11:19:45,576 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 11:19:45,576 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:24:45 CST)" executed successfully
+2025-06-19 11:24:45,564 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:29:45 CST)" (scheduled at 2025-06-19 11:24:45.563193+08:00)
+2025-06-19 11:24:45,565 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 11:24:45,565 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:29:45 CST)" executed successfully
+2025-06-19 11:29:45,563 - apscheduler.executors.default - INFO - Running job "ÇåÀíß^ÆÚ•şÔ’ (trigger: interval[0:30:00], next run at: 2025-06-19 11:59:45 CST)" (scheduled at 2025-06-19 11:29:45.562942+08:00)
+2025-06-19 11:29:45,564 - main - INFO - ˆÌĞĞ•şÔ’ÇåÀíÈÎ„Õ
+2025-06-19 11:29:45,564 - apscheduler.executors.default - INFO - Job "ÇåÀíß^ÆÚ•şÔ’ (trigger: interval[0:30:00], next run at: 2025-06-19 11:59:45 CST)" executed successfully
+2025-06-19 11:29:45,564 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:34:45 CST)" (scheduled at 2025-06-19 11:29:45.563193+08:00)
+2025-06-19 11:29:45,564 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 11:29:45,565 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:34:45 CST)" executed successfully
+2025-06-19 11:34:45,574 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:39:45 CST)" (scheduled at 2025-06-19 11:34:45.563193+08:00)
+2025-06-19 11:34:45,574 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 11:34:45,574 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:39:45 CST)" executed successfully
+2025-06-19 11:39:45,578 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:44:45 CST)" (scheduled at 2025-06-19 11:39:45.563193+08:00)
+2025-06-19 11:39:45,578 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 11:39:45,579 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:44:45 CST)" executed successfully
+2025-06-19 11:44:45,571 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:49:45 CST)" (scheduled at 2025-06-19 11:44:45.563193+08:00)
+2025-06-19 11:44:45,571 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 11:44:45,571 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:49:45 CST)" executed successfully
+2025-06-19 11:49:45,575 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:54:45 CST)" (scheduled at 2025-06-19 11:49:45.563193+08:00)
+2025-06-19 11:49:45,575 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 11:49:45,576 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:54:45 CST)" executed successfully
+2025-06-19 11:54:45,566 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:59:45 CST)" (scheduled at 2025-06-19 11:54:45.563193+08:00)
+2025-06-19 11:54:45,567 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 11:54:45,567 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 11:59:45 CST)" executed successfully
+2025-06-19 11:59:45,576 - apscheduler.executors.default - INFO - Running job "ÇåÀíß^ÆÚ•şÔ’ (trigger: interval[0:30:00], next run at: 2025-06-19 12:29:45 CST)" (scheduled at 2025-06-19 11:59:45.562942+08:00)
+2025-06-19 11:59:45,576 - main - INFO - ˆÌĞĞ•şÔ’ÇåÀíÈÎ„Õ
+2025-06-19 11:59:45,577 - apscheduler.executors.default - INFO - Job "ÇåÀíß^ÆÚ•şÔ’ (trigger: interval[0:30:00], next run at: 2025-06-19 12:29:45 CST)" executed successfully
+2025-06-19 11:59:45,577 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:04:45 CST)" (scheduled at 2025-06-19 11:59:45.563193+08:00)
+2025-06-19 11:59:45,577 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 11:59:45,578 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:04:45 CST)" executed successfully
+2025-06-19 12:04:45,569 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:09:45 CST)" (scheduled at 2025-06-19 12:04:45.563193+08:00)
+2025-06-19 12:04:45,569 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 12:04:45,570 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:09:45 CST)" executed successfully
+2025-06-19 12:09:45,578 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:14:45 CST)" (scheduled at 2025-06-19 12:09:45.563193+08:00)
+2025-06-19 12:09:45,579 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 12:09:45,579 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:14:45 CST)" executed successfully
+2025-06-19 12:14:45,566 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:19:45 CST)" (scheduled at 2025-06-19 12:14:45.563193+08:00)
+2025-06-19 12:14:45,567 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 12:14:45,567 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:19:45 CST)" executed successfully
+2025-06-19 12:19:45,576 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:24:45 CST)" (scheduled at 2025-06-19 12:19:45.563193+08:00)
+2025-06-19 12:19:45,577 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 12:19:45,578 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:24:45 CST)" executed successfully
+2025-06-19 12:24:45,573 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:29:45 CST)" (scheduled at 2025-06-19 12:24:45.563193+08:00)
+2025-06-19 12:24:45,573 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 12:24:45,573 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:29:45 CST)" executed successfully
+2025-06-19 12:29:45,577 - apscheduler.executors.default - INFO - Running job "ÇåÀíß^ÆÚ•şÔ’ (trigger: interval[0:30:00], next run at: 2025-06-19 12:59:45 CST)" (scheduled at 2025-06-19 12:29:45.562942+08:00)
+2025-06-19 12:29:45,577 - main - INFO - ˆÌĞĞ•şÔ’ÇåÀíÈÎ„Õ
+2025-06-19 12:29:45,577 - apscheduler.executors.default - INFO - Job "ÇåÀíß^ÆÚ•şÔ’ (trigger: interval[0:30:00], next run at: 2025-06-19 12:59:45 CST)" executed successfully
+2025-06-19 12:29:45,577 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:34:45 CST)" (scheduled at 2025-06-19 12:29:45.563193+08:00)
+2025-06-19 12:29:45,578 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 12:29:45,578 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:34:45 CST)" executed successfully
+2025-06-19 12:34:45,567 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:39:45 CST)" (scheduled at 2025-06-19 12:34:45.563193+08:00)
+2025-06-19 12:34:45,567 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 12:34:45,568 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:39:45 CST)" executed successfully
+2025-06-19 12:39:45,578 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:44:45 CST)" (scheduled at 2025-06-19 12:39:45.563193+08:00)
+2025-06-19 12:39:45,579 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 12:39:45,579 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:44:45 CST)" executed successfully
+2025-06-19 12:44:45,570 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:49:45 CST)" (scheduled at 2025-06-19 12:44:45.563193+08:00)
+2025-06-19 12:44:45,570 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 12:44:45,571 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:49:45 CST)" executed successfully
+2025-06-19 12:49:45,578 - apscheduler.executors.default - INFO - Running job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:54:45 CST)" (scheduled at 2025-06-19 12:49:45.563193+08:00)
+2025-06-19 12:49:45,578 - main - ERROR - ¸üĞÂÏµ½y½yÓ‹Ê§”¡: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 12:49:45,579 - apscheduler.executors.default - INFO - Job "¸üĞÂÏµ½y½yÓ‹ (trigger: interval[0:05:00], next run at: 2025-06-19 12:54:45 CST)" executed successfully
+2025-06-19 12:54:06,616 - main - INFO - ÙYÁÏìßB½ÓÒÑêPé]
+2025-06-19 12:54:06,619 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-06-19 12:55:44,046 - __main__ - INFO - å•Ÿå‹•æœå‹™å™¨: http://localhost:8080
+2025-06-19 12:55:44,047 - __main__ - INFO - WebSocketæœå‹™: ws://localhost:8081/ws
+2025-06-19 12:55:44,047 - __main__ - INFO - å¥åº·æª¢æŸ¥: http://localhost:8080/health
+2025-06-19 12:55:44,690 - main - INFO - å•Ÿå‹•æœ€é«˜éšè‡ªå‹•è´ŠåŠ©ç³»çµ±...
+2025-06-19 12:55:44,690 - main - INFO - é–‹ç™¼æ¨¡å¼ï¼šè·³éè³‡æ–™åº«é€£æ¥
+2025-06-19 12:55:44,693 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-19 12:55:44,693 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-19 12:55:44,694 - apscheduler.scheduler - INFO - Added job "æ¸…ç†éæœŸæœƒè©±" to job store "default"
+2025-06-19 12:55:44,694 - apscheduler.scheduler - INFO - Added job "æ›´æ–°ç³»çµ±çµ±è¨ˆ" to job store "default"
+2025-06-19 12:55:44,694 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-19 12:55:44,695 - main - INFO - ç³»çµ±å•Ÿå‹•å®Œæˆ
+2025-06-19 13:00:44,698 - apscheduler.executors.default - INFO - Running job "æ›´æ–°ç³»çµ±çµ±è¨ˆ (trigger: interval[0:05:00], next run at: 2025-06-19 13:05:44 CST)" (scheduled at 2025-06-19 13:00:44.693624+08:00)
+2025-06-19 13:00:44,698 - main - ERROR - æ›´æ–°ç³»çµ±çµ±è¨ˆå¤±æ•—: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 13:00:44,698 - apscheduler.executors.default - INFO - Job "æ›´æ–°ç³»çµ±çµ±è¨ˆ (trigger: interval[0:05:00], next run at: 2025-06-19 13:05:44 CST)" executed successfully
+2025-06-19 13:05:44,698 - apscheduler.executors.default - INFO - Running job "æ›´æ–°ç³»çµ±çµ±è¨ˆ (trigger: interval[0:05:00], next run at: 2025-06-19 13:10:44 CST)" (scheduled at 2025-06-19 13:05:44.693624+08:00)
+2025-06-19 13:05:44,699 - main - ERROR - æ›´æ–°ç³»çµ±çµ±è¨ˆå¤±æ•—: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 13:05:44,699 - apscheduler.executors.default - INFO - Job "æ›´æ–°ç³»çµ±çµ±è¨ˆ (trigger: interval[0:05:00], next run at: 2025-06-19 13:10:44 CST)" executed successfully
+2025-06-19 13:10:44,698 - apscheduler.executors.default - INFO - Running job "æ›´æ–°ç³»çµ±çµ±è¨ˆ (trigger: interval[0:05:00], next run at: 2025-06-19 13:15:44 CST)" (scheduled at 2025-06-19 13:10:44.693624+08:00)
+2025-06-19 13:10:44,699 - main - ERROR - æ›´æ–°ç³»çµ±çµ±è¨ˆå¤±æ•—: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 13:10:44,699 - apscheduler.executors.default - INFO - Job "æ›´æ–°ç³»çµ±çµ±è¨ˆ (trigger: interval[0:05:00], next run at: 2025-06-19 13:15:44 CST)" executed successfully
+2025-06-19 13:15:44,695 - apscheduler.executors.default - INFO - Running job "æ›´æ–°ç³»çµ±çµ±è¨ˆ (trigger: interval[0:05:00], next run at: 2025-06-19 13:20:44 CST)" (scheduled at 2025-06-19 13:15:44.693624+08:00)
+2025-06-19 13:15:44,696 - main - ERROR - æ›´æ–°ç³»çµ±çµ±è¨ˆå¤±æ•—: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 13:15:44,696 - apscheduler.executors.default - INFO - Job "æ›´æ–°ç³»çµ±çµ±è¨ˆ (trigger: interval[0:05:00], next run at: 2025-06-19 13:20:44 CST)" executed successfully
+2025-06-19 13:20:44,699 - apscheduler.executors.default - INFO - Running job "æ›´æ–°ç³»çµ±çµ±è¨ˆ (trigger: interval[0:05:00], next run at: 2025-06-19 13:25:44 CST)" (scheduled at 2025-06-19 13:20:44.693624+08:00)
+2025-06-19 13:20:44,700 - main - ERROR - æ›´æ–°ç³»çµ±çµ±è¨ˆå¤±æ•—: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 13:20:44,700 - apscheduler.executors.default - INFO - Job "æ›´æ–°ç³»çµ±çµ±è¨ˆ (trigger: interval[0:05:00], next run at: 2025-06-19 13:25:44 CST)" executed successfully
+2025-06-19 13:25:44,695 - apscheduler.executors.default - INFO - Running job "æ¸…ç†éæœŸæœƒè©± (trigger: interval[0:30:00], next run at: 2025-06-19 13:55:44 CST)" (scheduled at 2025-06-19 13:25:44.693301+08:00)
+2025-06-19 13:25:44,696 - main - INFO - åŸ·è¡Œæœƒè©±æ¸…ç†ä»»å‹™
+2025-06-19 13:25:44,696 - apscheduler.executors.default - INFO - Job "æ¸…ç†éæœŸæœƒè©± (trigger: interval[0:30:00], next run at: 2025-06-19 13:55:44 CST)" executed successfully
+2025-06-19 13:25:44,697 - apscheduler.executors.default - INFO - Running job "æ›´æ–°ç³»çµ±çµ±è¨ˆ (trigger: interval[0:05:00], next run at: 2025-06-19 13:30:44 CST)" (scheduled at 2025-06-19 13:25:44.693624+08:00)
+2025-06-19 13:25:44,697 - main - ERROR - æ›´æ–°ç³»çµ±çµ±è¨ˆå¤±æ•—: 'NoneType' object has no attribute 'fetch_one'
+2025-06-19 13:25:44,697 - apscheduler.executors.default - INFO - Job "æ›´æ–°ç³»çµ±çµ±è¨ˆ (trigger: interval[0:05:00], next run at: 2025-06-19 13:30:44 CST)" executed successfully
+2025-06-19 13:26:37,354 - main - INFO - ğŸ”„ æ­£åœ¨é—œé–‰ç³»çµ±...
+2025-06-19 13:26:37,354 - main - INFO - è³‡æ–™åº«é€£æ¥å·²é—œé–‰
+2025-06-19 13:26:37,354 - main - INFO - ç³»çµ±å·²å®‰å…¨é—œé–‰
+2025-06-19 13:26:37,355 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-06-19 13:28:18,331 - __main__ - INFO - å•Ÿå‹•æœå‹™å™¨: http://localhost:8080
+2025-06-19 13:28:18,332 - __main__ - INFO - WebSocketæœå‹™: ws://localhost:8081/ws
+2025-06-19 13:28:18,332 - __main__ - INFO - å¥åº·æª¢æŸ¥: http://localhost:8080/health
+2025-06-19 13:28:19,032 - main - INFO - å•Ÿå‹•æœ€é«˜éšè‡ªå‹•è´ŠåŠ©ç³»çµ±...
+2025-06-19 13:28:19,033 - main - INFO - é–‹ç™¼æ¨¡å¼ï¼šè·³éè³‡æ–™åº«é€£æ¥
+2025-06-19 13:28:19,036 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-19 13:28:19,036 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-19 13:28:19,037 - apscheduler.scheduler - INFO - Added job "æ¸…ç†éæœŸæœƒè©±" to job store "default"
+2025-06-19 13:28:19,037 - apscheduler.scheduler - INFO - Added job "æ›´æ–°ç³»çµ±çµ±è¨ˆ" to job store "default"
+2025-06-19 13:28:19,037 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-19 13:28:19,037 - main - INFO - ç³»çµ±å•Ÿå‹•å®Œæˆ
+2025-06-19 13:29:03,206 - __main__ - INFO - å•Ÿå‹•æœå‹™å™¨: http://localhost:8080
+2025-06-19 13:29:03,206 - __main__ - INFO - WebSocketæœå‹™: ws://localhost:8081/ws
+2025-06-19 13:29:03,207 - __main__ - INFO - å¥åº·æª¢æŸ¥: http://localhost:8080/health
+2025-06-19 13:29:03,798 - main - INFO - å•Ÿå‹•æœ€é«˜éšè‡ªå‹•è´ŠåŠ©ç³»çµ±...
+2025-06-19 13:29:03,798 - main - INFO - é–‹ç™¼æ¨¡å¼ï¼šè·³éè³‡æ–™åº«é€£æ¥
+2025-06-19 13:29:03,801 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-19 13:29:03,801 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-19 13:29:03,802 - apscheduler.scheduler - INFO - Added job "æ¸…ç†éæœŸæœƒè©±" to job store "default"
+2025-06-19 13:29:03,802 - apscheduler.scheduler - INFO - Added job "æ›´æ–°ç³»çµ±çµ±è¨ˆ" to job store "default"
+2025-06-19 13:29:03,803 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-19 13:29:03,803 - main - INFO - ç³»çµ±å•Ÿå‹•å®Œæˆ
+2025-06-19 13:29:21,623 - main - INFO - ğŸ”„ æ­£åœ¨é—œé–‰ç³»çµ±...
+2025-06-19 13:29:21,624 - main - INFO - è³‡æ–™åº«é€£æ¥å·²é—œé–‰
+2025-06-19 13:29:21,624 - main - INFO - ç³»çµ±å·²å®‰å…¨é—œé–‰
+2025-06-19 13:29:21,624 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-06-19 13:29:24,068 - main - INFO - ğŸ”„ æ­£åœ¨é—œé–‰ç³»çµ±...
+2025-06-19 13:29:24,068 - main - INFO - è³‡æ–™åº«é€£æ¥å·²é—œé–‰
+2025-06-19 13:29:24,068 - main - INFO - ç³»çµ±å·²å®‰å…¨é—œé–‰
+2025-06-19 13:29:24,069 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-06-19 13:29:25,921 - __main__ - INFO - å•Ÿå‹•æœå‹™å™¨: http://localhost:8080
+2025-06-19 13:29:25,922 - __main__ - INFO - WebSocketæœå‹™: ws://localhost:8081/ws
+2025-06-19 13:29:25,922 - __main__ - INFO - å¥åº·æª¢æŸ¥: http://localhost:8080/health
+2025-06-19 13:29:26,560 - main - INFO - å•Ÿå‹•æœ€é«˜éšè‡ªå‹•è´ŠåŠ©ç³»çµ±...
+2025-06-19 13:29:26,561 - main - INFO - é–‹ç™¼æ¨¡å¼ï¼šè·³éè³‡æ–™åº«é€£æ¥
+2025-06-19 13:29:26,563 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-19 13:29:26,563 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-19 13:29:26,564 - apscheduler.scheduler - INFO - Added job "æ¸…ç†éæœŸæœƒè©±" to job store "default"
+2025-06-19 13:29:26,564 - apscheduler.scheduler - INFO - Added job "æ›´æ–°ç³»çµ±çµ±è¨ˆ" to job store "default"
+2025-06-19 13:29:26,564 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-19 13:29:26,565 - main - INFO - ç³»çµ±å•Ÿå‹•å®Œæˆ
+2025-06-19 13:29:38,296 - main - INFO - ğŸ”„ æ­£åœ¨é—œé–‰ç³»çµ±...
+2025-06-19 13:29:38,297 - main - INFO - è³‡æ–™åº«é€£æ¥å·²é—œé–‰
+2025-06-19 13:29:38,297 - main - INFO - ç³»çµ±å·²å®‰å…¨é—œé–‰
+2025-06-19 13:29:38,297 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-06-19 16:38:33,308 - __main__ - INFO - å•Ÿå‹•æœå‹™å™¨: http://localhost:8080
+2025-06-19 16:38:33,308 - __main__ - INFO - WebSocketæœå‹™: ws://localhost:8081/ws
+2025-06-19 16:38:33,308 - __main__ - INFO - å¥åº·æª¢æŸ¥: http://localhost:8080/health
+2025-06-19 16:38:33,943 - main - INFO - å•Ÿå‹•æœ€é«˜éšè‡ªå‹•è´ŠåŠ©ç³»çµ±...
+2025-06-19 16:38:33,944 - main - INFO - é–‹ç™¼æ¨¡å¼ï¼šè·³éè³‡æ–™åº«é€£æ¥
+2025-06-19 16:38:33,946 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-19 16:38:33,947 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-19 16:38:33,947 - apscheduler.scheduler - INFO - Added job "æ¸…ç†éæœŸæœƒè©±" to job store "default"
+2025-06-19 16:38:33,948 - apscheduler.scheduler - INFO - Added job "æ›´æ–°ç³»çµ±çµ±è¨ˆ" to job store "default"
+2025-06-19 16:38:33,948 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-19 16:38:33,948 - main - INFO - ç³»çµ±å•Ÿå‹•å®Œæˆ
+2025-06-19 16:39:34,186 - main - INFO - ğŸ”„ æ­£åœ¨é—œé–‰ç³»çµ±...
+2025-06-19 16:39:34,187 - main - INFO - è³‡æ–™åº«é€£æ¥å·²é—œé–‰
+2025-06-19 16:39:34,187 - main - INFO - ç³»çµ±å·²å®‰å…¨é—œé–‰
+2025-06-19 16:39:34,187 - apscheduler.scheduler - INFO - Scheduler has been shut down

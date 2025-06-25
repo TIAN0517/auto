@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贊助套餐 - Jy自動贊助系統</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="description" content="選擇您的專屬贊助套餐，享受極速遊戲體驗">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    .sponsor-header, .package-card, .profile-card, .balance-card, .quick-action-card {
+      background: rgba(20, 20, 40, 0.55);
+      box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.15), 0 1.5px 8px 0 rgba(124, 58, 237, 0.08);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-radius: 20px;
+      border: none;
+    }
+    .package-card:hover {
+      box-shadow: 0 8px 48px 0 var(--primary-color), 0 2px 16px 0 var(--accent-color);
+      transform: translateY(-8px) scale(1.03);
+      transition: box-shadow 0.3s, transform 0.2s;
+      z-index: 2;
+    }
+    .sponsor-title, .gradient-text {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      filter: drop-shadow(0 0 8px var(--primary-color));
+    }
+    .package-btn {
+      box-shadow: 0 0 16px 4px var(--primary-color), 0 0 32px 8px var(--accent-color);
+      background: var(--gradient-primary);
+      color: #fff;
+      border: none;
+      border-radius: 9999px;
+      transition: box-shadow 0.3s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .package-btn:hover {
+      box-shadow: 0 0 32px 8px var(--primary-color), 0 0 64px 16px var(--accent-color);
+      transform: scale(1.05);
+    }
+    </style>
+</head>
+<body>
+    <!-- 載入畫面 -->
+    <div id="loading-screen">
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">載入贊助套餐中...</div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+        <div class="loading-particles"></div>
+    </div>
+
+    <!-- 導航欄 -->
+    <header class="navbar">
+        <nav class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Jy Auto Sponsor</span>
+                <span class="logo-version">v3.0</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">首頁</a></li>
+                <li><a href="sponsor.html" class="nav-link active">贊助</a></li>
+                <li><a href="payment.html" class="nav-link">支付</a></li>
+                <li><a href="user-dashboard.html" class="nav-link">用戶中心</a></li>
+                <li><a href="admin.html" class="nav-link admin-link">管理後台</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="notification-btn" id="notificationBtn">
+                    <span class="notification-icon">🔔</span>
+                    <span class="notification-badge">3</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主要內容 -->
+    <main class="main-content">
+        <!-- 贊助標題區 -->
+        <section class="sponsor-header">
+            <div class="header-content">
+                <h1 class="sponsor-title">
+                    <span class="title-icon">💎</span>
+                    <span class="gradient-text">選擇您的專屬套餐</span>
+                </h1>
+                <p class="sponsor-subtitle">精心設計的贊助方案，為您提供最佳遊戲體驗</p>
+                <div class="sponsor-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <span class="feature-text">15秒極速發放</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔒</span>
+                        <span class="feature-text">安全支付保障</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎮</span>
+                        <span class="feature-text">專屬遊戲道具</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🏆</span>
+                        <span class="feature-text">VIP專屬特權</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 套餐選擇區 -->
+        <section class="packages-section">
+            <div class="packages-container">
+                <!-- 基礎套餐 -->
+                <div class="package-card basic-package" data-package="basic">
+                    <div class="package-header">
+                        <div class="package-icon">🌟</div>
+                        <h3 class="package-name">基礎套餐</h3>
+                        <div class="package-price">
+                            <span class="price-currency">NT$</span>
+                            <span class="price-amount">300</span>
+                        </div>
+                        <p class="package-desc">適合新手玩家的入門選擇</p>
+                    </div>
+                    <div class="package-features">
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">遊戲幣 x 10,000</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">經驗加成 +50%</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">基礎裝備包</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">7天VIP權限</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="package-footer">
+                        <button class="package-btn" data-amount="300" data-package="basic">
+                            <span class="btn-text">選擇套餐</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 進階套餐 -->
+                <div class="package-card advanced-package" data-package="advanced">
+                    <div class="package-header">
+                        <div class="package-icon">💎</div>
+                        <h3 class="package-name">進階套餐</h3>
+                        <div class="package-price">
+                            <span class="price-currency">NT$</span>
+                            <span class="price-amount">600</span>
+                        </div>
+                        <p class="package-desc">最受歡迎的平衡選擇</p>
+                        <div class="popular-badge">熱門</div>
+                    </div>
+                    <div class="package-features">
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">遊戲幣 x 25,000</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">經驗加成 +100%</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">稀有裝備包</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">15天VIP權限</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">專屬稱號</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="package-footer">
+                        <button class="package-btn" data-amount="600" data-package="advanced">
+                            <span class="btn-text">選擇套餐</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- VIP套餐 -->
+                <div class="package-card vip-package" data-package="vip">
+                    <div class="package-header">
+                        <div class="package-icon">👑</div>
+                        <h3 class="package-name">VIP套餐</h3>
+                        <div class="package-price">
+                            <span class="price-currency">NT$</span>
+                            <span class="price-amount">1,000</span>
+                        </div>
+                        <p class="package-desc">頂級玩家的終極體驗</p>
+                    </div>
+                    <div class="package-features">
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">遊戲幣 x 50,000</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">經驗加成 +200%</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">傳說裝備包</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">30天VIP權限</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">專屬坐騎</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">VIP專屬區域</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="package-footer">
+                        <button class="package-btn" data-amount="1000" data-package="vip">
+                            <span class="btn-text">選擇套餐</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 至尊套餐 -->
+                <div class="package-card supreme-package" data-package="supreme">
+                    <div class="package-header">
+                        <div class="package-icon">🔥</div>
+                        <h3 class="package-name">至尊套餐</h3>
+                        <div class="package-price">
+                            <span class="price-currency">NT$</span>
+                            <span class="price-amount">2,000</span>
+                        </div>
+                        <p class="package-desc">無與倫比的頂級享受</p>
+                        <div class="exclusive-badge">限量</div>
+                    </div>
+                    <div class="package-features">
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">遊戲幣 x 120,000</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">經驗加成 +500%</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">神話裝備包</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">永久VIP權限</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">專屬翅膀</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">至尊稱號</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">專屬客服</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="package-footer">
+                        <button class="package-btn" data-amount="2000" data-package="supreme">
+                            <span class="btn-text">選擇套餐</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 支付方式預覽 -->
+        <section class="payment-preview">
+            <div class="preview-container">
+                <h2 class="preview-title">支持的支付方式</h2>
+                <div class="payment-methods-preview">
+                    <div class="method-preview speedpay-preview">
+                        <img src="assets/payment-logos/speedpay.png" alt="速買配" class="method-logo">
+                        <div class="method-info">
+                            <h4 class="method-name">速買配 SpeedPay</h4>
+                            <p class="method-desc">台灣本土 • 即時到帳</p>
+                            <div class="method-badge recommended">推薦</div>
+                        </div>
+                    </div>
+                    <div class="method-preview ecpay-preview">
+                        <img src="assets/payment-logos/ecpay.png" alt="綠界科技" class="method-logo">
+                        <div class="method-info">
+                            <h4 class="method-name">綠界科技</h4>
+                            <p class="method-desc">多元支付選擇</p>
+                        </div>
+                    </div>
+                    <div class="method-preview newebpay-preview">
+                        <img src="assets/payment-logos/newebpay.png" alt="藍新金流" class="method-logo">
+                        <div class="method-info">
+                            <h4 class="method-name">藍新金流</h4>
+                            <p class="method-desc">穩定可靠服務</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常見問題 -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <h2 class="faq-title">常見問題</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">❓</span>
+                            <span class="question-text">支付後多久會收到道具？</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>我們的系統會在支付成功後15秒內自動發放道具到您的遊戲帳號，無需等待人工處理。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">💳</span>
+                            <span class="question-text">支持哪些支付方式？</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>我們支持速買配、綠界科技、藍新金流等多種支付方式，包括信用卡、ATM轉帳、超商代碼等。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">🔒</span>
+                            <span class="question-text">支付安全嗎？</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>我們使用SSL加密技術和PCI認證的支付閘道，確保您的支付資訊完全安全。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">🎮</span>
+                            <span class="question-text">如何確認道具已發放？</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>支付成功後，您會收到確認郵件，同時可以在用戶中心查看交易記錄和道具發放狀態。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 選擇套餐模態框 -->
+    <div id="packageModal" class="modal">
+        <div class="modal-content package-modal">
+            <div class="modal-header">
+                <h3 class="modal-title">確認套餐選擇</h3>
+                <button class="modal-close" id="closePackageModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="selected-package-info">
+                    <div class="package-summary">
+                        <div class="summary-icon" id="modalPackageIcon">💎</div>
+                        <div class="summary-details">
+                            <h4 class="summary-name" id="modalPackageName">進階套餐</h4>
+                            <p class="summary-price" id="modalPackagePrice">NT$ 600</p>
+                        </div>
+                    </div>
+                    <div class="package-benefits" id="modalPackageBenefits">
+                        <!-- 動態載入套餐內容 -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancelPackage">取消</button>
+                <button class="btn-primary" id="confirmPackage">
+                    <span class="btn-text">前往支付</span>
+                    <span class="btn-icon">💳</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 背景效果 -->
+    <div class="background-effects">
+        <div class="particle-field"></div>
+        <div class="grid-overlay"></div>
+        <div class="energy-waves"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/sponsor.js"></script>
+    <script src="js/websocket.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<svg width="200" height="50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Facebook -->
+  <g id="facebook">
+    <circle cx="25" cy="25" r="20" fill="#1877f2"/>
+    <text x="25" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">f</text>
+  </g>
+  
+  <!-- Twitter -->
+  <g id="twitter">
+    <circle cx="75" cy="25" r="20" fill="#1da1f2"/>
+    <path d="M65 20 L85 20 L80 30 L70 30 Z" fill="white"/>
+  </g>
+  
+  <!-- Instagram -->
+  <g id="instagram">
+    <circle cx="125" cy="25" r="20" fill="#e4405f"/>
+    <rect x="115" y="15" width="20" height="20" rx="5" fill="none" stroke="white" stroke-width="2"/>
+    <circle cx="125" cy="25" r="5" fill="none" stroke="white" stroke-width="2"/>
+    <circle cx="132" cy="18" r="2" fill="white"/>
+  </g>
+  
+  <!-- Discord -->
+  <g id="discord">
+    <circle cx="175" cy="25" r="20" fill="#5865f2"/>
+    <text x="175" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">D</text>
+  </g>
+</svg>
